@@ -1,0 +1,322 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人界面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/OtherUserPage.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/OtherUserPage.js"></script>
+</head>
+<body>
+
+<nav class="navTop">
+    <div class="nav-in">
+                    <span class="brand">
+                    <a href="#"><img src="../images/logo.jpg" alt=""></a>
+                </span>
+        <ul class="navTab">
+            <li><a href="/index2">首页</a></li>
+            <li><a href="/shareArea">图片</a></li>
+            <li><a href="/share/share-video">视频</a></li>
+            <li><a href="share/share-diary">阅读</a></li>
+        </ul>
+        <div class="navRight">
+            <a href="/login" class="login">登陆/注册</a>
+            <ul>
+                <li class="head"><img src=<%= '../'+myself[0].uimg %> alt=""></li>
+                <li class="nickName"><%= myself[0].Nickname %></li>
+                <li class="line">|</li>
+                <li><a href="/login">退出登陆</a></li>
+                <li><a href="#">消息通知</a></li>
+                <li><a href="/test">个人空间</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="userPage">
+    <div class="userPage-top">
+        <div class="userPage-top-left">
+            <div class="head">
+                <img src= <%= user[0].uimg%> alt="">
+            </div>
+            <div class="info">
+                <h4 class="nickName">
+                  <%= user[0].Nickname%>
+                </h4>
+                <p class="intro">
+                    <%= user[0].qianming%>
+                </p>
+            </div>
+
+        </div>
+        <div class="userPage-top-right">
+       
+
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="nav-home selected"><a href="javascript:;">主页</a></li>
+            <li class="nav-pic"><a href="javascript:;">图片</a></li>
+            <li class="nav-video"><a href="javascript:;">视频</a></li>
+            <li class="nav-diary"><a href="javascript:;">文章</a></li>
+        </ul>
+        <div>
+            <p>访问人数</p>
+            <span><%= fangwen[0].num%></span>
+        </div>
+    </div>
+    <div class="userPage-content">
+        <ul class="content">
+            <li class="indexContent selected">
+                <div class="imageArea">
+                    
+
+
+
+                    <div class="content">
+                        <ul class="imageList">
+                            <!--最多放四个imageBox-->
+                            <!--若此图片以点赞,为imageBox添加liked类-->
+                            <% for(var i in image){ %>
+                            <li class="imageBox">
+                                <div class="imageBox-in">
+                                    <div class="box">
+                                        <a href="share/image/?src=<%= image[i].src%>" target="_blank"><img src=<%= image[i].src%> alt=""></a>
+                                    </div>
+                                    <div class="bottomInfo">
+                                        <div class="infoTop">
+                                    <span class="publisher">
+                                        <span class="head">
+                                            <img src=<%= image[i].uimg%> alt="">
+                                        </span>
+                                        <span class="nickName">
+                                            <a href="" target="_blank"><%= image[i].Nickname%></a>
+                                        </span>
+                                    </span>
+                                            <!--当登陆者时本人时deleteIcon显示,likeIcon隐藏;若非本人则相反-->
+                                            <span class="likeIcon"></span>
+                                            <!--<span class="deleteIcon iconfont icon-shanchu "></span>-->
+                                        </div>
+                                        <div class="data">
+                                            <span class="lookNum"><%= image[i].liulan%></span> 次浏览 | 评论:
+                                            <span class="comNum"><%= image[i].views%></span> | 喜欢:
+                                            <span class="likeNum"><%= image[i].goods%></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <p class="noContent">
+                            这里还没有被上传的内容
+                        </p>
+                    </div>
+                </div>
+                <div class="videoArea">
+                    
+                    <div class="content">
+                        <ul class="videoList">
+                            <!--最多放三个videoBox-->
+                            <% for(var i in video){ %>
+                            <li class="videoBox">
+                                <div class="videoBox-in">
+                                    <div class="box">
+                                        <a href="share/video/?src=<%= video[i].src%>" target="_blank"><video src=<%= video[i].src%> width="370px" height="220px" muted></video></a>
+                                        <span class="iconfont icon-shipinbofang  playIcon"></span>
+                                        <p class="progressBar"><span class="progress"></span></p>
+                                    </div>
+                                    <div class="bottomInfo">
+                                        <p class="videoTitle"><a  target="_blank"><%= video[i].title%></a></p>
+                                        <!--当登陆者时本人时deleteIcon显示-->
+                                        <p class="publisher"><a  target="_blank">By / 章鱼哥</a></p>
+                                        <p class="data">
+                                            <span class="playNum"><%= video[i].liulan%></span> 次播放 | 评论:
+                                            <span class="comNum"><%= video[i].views%></span> | 喜欢:
+                                            <span class="likeNum"><%= video[i].goods%></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <p class="noContent">
+                            这里还没有被上传的内容
+                        </p>
+                    </div>
+                </div>
+                <div class="articleArea">
+                    
+                    <div class="content">
+                        <ul class="articleList">
+                            <!--最多放四个articleBox-->
+                            <% for(var i in diary){ %>
+                            <li class="articleBox">
+                                <div class="articleLeft">
+                                    <div class="articleTop">
+                                        <p class="articleTitle">
+                                            <a href="share/diary/?src=<%= diary[i].img%>" target="_blank"><%= diary[i].jianjie%></a>
+                                        </p>
+                                        <p class="writer">
+                                            <a  target="_blank">By / <%= diary[i].Nickname%></a>
+                                            <!--当登陆者时本人时deleteIcon显示-->
+                                            <!--              <span class="deleteIcon iconfont icon-shanchu"></span>-->
+                                        </p>
+                                    </div>
+                                    <div class="articleContent">
+                                        <p><%= diary[i].content%>
+                                        </p>
+
+                                    </div>
+                                    <div class="articleBottom">
+                                        <span class="watchNum"><%= diary[i].liulan%></span>
+                                        次阅读 | 评论:
+                                        <span class="comNum"><%= diary[i].views%></span>
+                                        | 喜欢:
+                                        <span class="likeNum"><%= diary[i].goods%></span>
+                                    </div>
+                                </div>
+                                <div class="articleRight">
+                                    <!--配图区,若有配图则添加一个img, 没有就不添加,最多一个配图-->
+                                </div>
+                            </li>
+                            <% } %>
+                        </ul>
+                        <p class="noContent">
+                            这里还没有被上传的内容
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="imageContent">
+                <ul class="imageList">
+                    <!--若此图片以点赞,为imageBox添加liked类-->
+                    <% for(var i in image){ %>
+                    <li class="imageBox">
+                        <div class="imageBox-in">
+                            <div class="box">
+                                <a href="share/image/?src=<%= image[i].src%>" target="_blank"><img src=<%= image[i].src%> alt=""></a>
+                            </div>
+                            <div class="bottomInfo">
+                                <div class="infoTop">
+                            <span class="publisher">
+                                <span class="head">
+                                    <img src=<%= image[i].uimg%> alt="">
+                                </span>
+                                <span class="nickName">
+                                    <a href="#" target="_blank"><%= image[i].Nickname%></a>
+                                </span>
+                            </span>
+                                    <!--当登陆者时本人时deleteIcon显示,likeIcon隐藏;若非本人则相反-->
+                                    <span class="likeIcon"></span>
+                                    <!--<span class="deleteIcon iconfont icon-shanchu "></span>-->
+                                </div>
+                                <div class="data">
+                                    <span class="lookNum"><%= image[i].liulan%></span> 次浏览 | 评论:
+                                    <span class="comNum"><%= image[i].views%></span> | 喜欢:
+                                    <span class="likeNum"><%= image[i].goods%></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <% } %>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </li>
+            <li class="videoContent">
+                <ul class="videoList">
+                    <% for(var i in video){ %>
+                    <li class="videoBox">
+                        <div class="videoBox-in">
+                            <div class="box">
+                                <a href="share/video/?src=<%= video[i].src%>" target="_blank"><video src=<%= video[i].src%> width="370px" height="220px" muted></video></a>
+                                <span class="iconfont icon-shipinbofang  playIcon"></span>
+                                <p class="progressBar"><span class="progress"></span></p>
+                            </div>
+                            <div class="bottomInfo">
+                                <p class="videoTitle"><a target="_blank"><%= video[i].title%></a></p>
+                                <!--当登陆者时本人时deleteIcon显示-->
+                                <p class="publisher"><a target="_blank">By / <%= video[i].Nickname%></a></p>
+                                <p class="data">
+                                    <span class="playNum"><%= video[i].liulan%></span> 次播放 | 评论:
+                                    <span class="comNum"><%= video[i].views%></span> | 喜欢:
+                                    <span class="likeNum"><%= video[i].goods%></span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                        <% } %>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </li>
+            <li class="articleContent">
+                <ul class="articleList">
+                    <% for(var i in diary){ %>
+                    <li class="articleBox">
+                        <div class="articleLeft">
+                            <div class="articleTop">
+                                <p class="articleTitle">
+                                    <a href="share/diary/?src=<%= diary[i].img%>" target="_blank"><%= diary[i].jianjie%></a>
+                                </p>
+                                <p class="writer">
+                                    <a  target="_blank">By / <%= diary[i].Nickname%></a>
+                                    <!--当登陆者时本人时deleteIcon显示-->
+                                    <!--<span class="deleteIcon iconfont icon-shanchu"></span>-->
+                                </p>
+                            </div>
+                            <div class="articleContent">
+                                <p>
+                                    <%= diary[i].content%>
+                                </p>
+
+                            </div>
+                            <div class="articleBottom">
+                                <span class="watchNum"><%= diary[i].liulan%></span>
+                                次阅读 | 评论:
+                                <span class="comNum"><%= diary[i].views%></span>
+                                | 喜欢:
+                                <span class="likeNum"><%= diary[i].goods%></span>
+                            </div>
+                        </div>
+                        <div class="articleRight">
+                            <!--配图区,有就添加一个img, 没有就不用添加-->
+                            <img src=<%= diary[i].img%> alt="">
+                        </div>
+                    </li>
+                        <% } %>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div class="confirm">
+    <div>
+        <img src="images/confirm-img.png" alt="">
+    </div>
+    <p></p>
+    <div class="btnGroup">
+        <span>取消</span>
+        <span>确认</span>
+    </div>
+</div>
+<div class="hint">
+    <div>
+        <img src="images/hint-ok.png" alt="">
+    </div>
+    <p></p>
+</div>
+</body>
+</html>

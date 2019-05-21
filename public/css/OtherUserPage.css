@@ -1,0 +1,1060 @@
+body{
+    width: 100%;
+    background: #f8f8f8;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+.userPage{
+    width: 1200px;
+    margin: 10px auto 50px auto;
+    background: #f8f8f8;
+}
+.userPage>.userPage-top{
+    width: 100%;
+    height: 250px;
+    background: url("../images/indexBg01.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 0 1px #eee;
+    box-sizing: border-box;
+}
+.userPage-top-left{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.userPage-top-left>.head{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgba(255,255,255,0.5);
+    float: left;
+}
+.userPage-top-left>.head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.userPage-top-left>.info{
+    width: 500px;
+    height: 100px;
+    float: left;
+    margin-left: 20px;
+    color: #fff;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.userPage-top-left>.info>.nickName{
+    line-height: 30px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.userPage-top-left>.info>.intro{
+}
+.userPage-top-right{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.userPage-top-right>button{
+    width: 76px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: rgba(0,0,0,0.45);
+    font-size: 14px;
+    box-shadow: 0 0 0 2px hsla(0,0%,100%,.3);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.userPage-top-right>button>a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.userPage-top-right>button:hover{
+    background: rgba(0,0,0,0.55);
+}
+.userPage-top-right>.userSet{
+    width: 90px;
+    font-size: 12px;
+}
+.userPage-top-right>.userSet>a>span{
+    font-size: 12px;
+}
+.userPage>.nav{
+    width: 1200px;
+    height: 50px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    border-radius: 0 0 5px 5px;
+}
+.userPage>.nav>ul{
+    list-style: none;
+    overflow: hidden;
+    width: 600px;
+    float: left;
+}
+.userPage>.nav>ul>li{
+    float: left;
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+}
+.userPage>.nav>ul>li>a{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    color: #333;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: color 0.25s;
+}
+.userPage>.nav>ul>li>a:hover{
+    border-bottom: 2px solid #57ad68;
+    color: #57ad68;
+}
+.userPage>.nav>ul>li.selected a{
+    border-bottom: 2px solid #57ad68;
+    color: #57ad68;
+}
+.userPage>.nav>ul>li>a>img{
+    width: 25px;
+    height: 25px;
+}
+.userPage>.nav>div{
+    width: 100px;
+    height: 50px;
+    float: right;
+}
+.userPage>.nav>div>p{
+    width: 100%;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+}
+.userPage>.nav>div>span{
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+.userPage>.userPage-content{
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #eee;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+.userPage>.userPage-content>.content>li{
+    display: none;
+}
+.userPage>.userPage-content>.content>li.selected{
+    display: block;
+}
+.userPage-content>.content>li>div{
+    width: 100%;
+}
+.userPage-content>.content>li>div>.title{
+    font-size: 20px;
+    letter-spacing: 1px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+.userPage-content>.content>li>div>.title::before{
+    width: 18px;
+    height: 18px;
+    content: "";
+    display: inline-block;
+    background: #333;
+    position: relative;
+    left: -2px;
+    top: 3px;
+    margin-right: 5px;
+}
+.userPage-content>.content>li>div>.title>.more{
+    font-size: 12px;
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    display: inline-block;
+    line-height: 25px;
+    border: 1px solid #666;
+    transition: 0.25s;
+
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
+.userPage-content>.content>li>div>.title>.more>a{
+    color: #666;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: 0.25s;
+
+}
+.userPage-content>.content>li>div>.title>.more>a>.iconfont{
+    font-size: 12px;
+    transition: 0.25s;
+
+}
+.userPage-content>.content>li>div>.title>.more:hover{
+    border-color: #57ad68;
+}
+.userPage-content>.content>li>div>.title>.more:hover a{
+    color: #57ad68;
+}
+.userPage-content>.content>li>div>.title>.more:hover a>.iconfont{
+    color: #57ad68;
+}
+.userPage-content>.content>li>div>.content{
+    width: 100%;
+}
+.userPage-content>.content .imageArea,.videoArea{
+    margin-bottom: 40px;
+}
+/*首页开始*/
+/*图片区开始*/
+.noContent{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none;
+}
+.indexContent .imageList{
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+.indexContent .imageList>.imageBox{
+    width: 300px;
+    height: 370px;
+    box-sizing: border-box;
+    float: left;
+}
+.indexContent .imageList>.imageBox>.imageBox-in{
+    width: 270px;
+    margin: 0 auto;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+}
+.indexContent .imageList>.imageBox .box{
+    overflow: hidden;
+}
+.indexContent .imageList>.imageBox .box>a>img{
+    width: 270px;
+    height: 270px;
+    transition: 0.8s;
+}
+.indexContent .imageList>.imageBox .box>a>img:hover{
+    transform: scale(1.2);
+}
+.indexContent .imageList>.imageBox .bottomInfo{
+    padding: 15px 20px 13px 20px;
+
+}
+.indexContent .imageBox .bottomInfo>.infoTop{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .head>img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    float: left;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .nickName{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .nickName>a{
+    color: #444;
+    text-decoration: none;
+    transition: 0.25s;
+    font-size: 13px;
+    float: left;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .nickName>a:hover{
+    color: #57ad68;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .likeIcon{
+    width: 25px;
+    height: 23px;
+    display: inline-block;
+    background: url("../images/like1.png") no-repeat 0 0;
+    background-size: 100%;
+}
+.indexContent .imageBox .bottomInfo>.infoTop .likeIcon:hover{
+    background-image: url("../images/like2.png");
+}
+.indexContent .imageBox.liked .bottomInfo>.infoTop .likeIcon{
+    background-image: url("../images/like2.png");
+}
+.indexContent .imageBox .bottomInfo .infoTop .deleteIcon{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    color: #ec6e6e;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.25s;
+    opacity: 0;
+}
+.indexContent .imageBox>.imageBox-in:hover .deleteIcon{
+
+    opacity: 1;
+}
+.indexContent .imageBox .bottomInfo .infoTop .deleteIcon:hover{
+    color: #ec3e3e;
+}
+.indexContent .imageBox .bottomInfo .data{
+    font-size: 12px;
+    color: #999;
+}
+/*图片区结束*/
+/*视频区开始*/
+.indexContent .videoList{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.indexContent .videoList>.videoBox{
+    width: 400px;
+    float: left;
+    padding-bottom: 15px;
+}
+.indexContent .videoList>.videoBox>.videoBox-in{
+    width: 370px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.indexContent .videoList>.videoBox .box{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.indexContent .videoList>.videoBox .box video{
+    width: 100%;
+    transition: 0.8s;
+
+}
+.indexContent .videoBox .bottomInfo{
+    padding: 5px 20px 13px 20px;
+    box-sizing: border-box;
+}
+.indexContent .videoBox .bottomInfo>.videoTitle{
+    padding-bottom: 8px;
+    font-size: 18px;
+    height: 18px;
+    width: 330px;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.indexContent .videoBox .bottomInfo>.videoTitle>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.indexContent .bottomInfo>.videoTitle>a:hover{
+    color: #57ad68;
+}
+.indexContent .videoBox>.bottomInfo>.publisher{
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: #444;
+    width: 100%;
+}
+.indexContent .videoBox .deleteIcon{
+    float: right;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    color: #ec6e6e;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.indexContent .videoBox>.videoBox-in:hover .deleteIcon{
+    opacity: 1;
+}
+.indexContent .videoBox .deleteIcon:hover{
+    color: #ec3e3e;
+}
+.indexContent .videoBox .bottomInfo>.publisher>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.indexContent .bottomInfo>.publisher>a:hover{
+    color: #57ad68;
+}
+.indexContent .videoBox .bottomInfo>.data{
+    color: #999;
+    font-size: 12px;
+}
+.indexContent .videoBox .playIcon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 22px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: rgba(255,255,255,0.8);
+    transition: 0.8s;
+    user-select: none;
+    z-index: 9;
+}
+.indexContent .videoBox .box>.progressBar{
+    width: 340px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    position: absolute;
+    bottom: 15px;
+    border-radius: 2px;
+    margin-left: 15px;
+    display: none;
+}
+.indexContent .videoBox .box>.progressBar>.progress{
+    display: inline-block;
+    height: 4px;
+    border-radius: 2px;
+    width: 0;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    left: 0;
+}
+/*视频区结束*/
+/*文章区开始*/
+.indexContent .articleList{
+    width: 1200px;
+    margin: 30px auto;
+}
+.indexContent .articleList>.articleBox{
+    width: 100%;
+    height: 220px;
+    /*border: 1px solid #e8e8e8;*/
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.indexContent .articleBox .articleRight>img{
+    width: 300px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: -20px;
+    margin-top: -20px;
+}
+.indexContent .articleBox .articleTop{
+    position: relative;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+.indexContent .articleBox .articleTop>.articleTitle{
+    font-size: 24px;
+    height: 30px;
+    width: 580px;
+    line-height: 32px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+.indexContent .articleTop>.articleTitle>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+
+}
+.indexContent .articleTop>.articleTitle>a:hover{
+    color: #57ad68;
+}
+.indexContent .articleBox .articleTop>.writer{
+    font-size: 12px;
+}
+.indexContent .articleBox .deleteIcon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    float: right;
+    color: #ec6e6e;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.indexContent .articleBox:hover .deleteIcon{
+    opacity: 1;
+}
+.indexContent .articleBox .articleTop>.writer>.deleteIcon:hover{
+    color: #ec3e3e;
+}
+.indexContent .articleBox .articleTop>.writer>a{
+    color: #444;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.indexContent .articleBox .articleTop>.writer>a:hover{
+    color: #57ad68;
+}
+.indexContent .articleBox .articleTop>.writer::after{
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    border-bottom: 1px solid #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.indexContent .articleBox .articleContent{
+    position: relative;
+    margin-bottom: 30px;
+}
+.indexContent .articleBox .articleContent>p{
+    width: 100%;
+    overflow: hidden;
+    height: 75px;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 20px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+.indexContent .articleContent .viewAll{
+    display: inline-block;
+    height: 20px;
+    color: #78bc85;
+    cursor: pointer;
+    line-height: 20px;
+    transition: 0.2s;
+    user-select: none;
+    margin-left: 10px;
+}
+.indexContent .articleContent .viewAll:hover a{
+    color: #57ad68;
+}
+.indexContent .articleContent .viewAll img{
+    width: 8px;
+    height: 10px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+.indexContent .articleContent .viewAll>a{
+    display: inline-block;
+    height: 20px;
+    color: #78bc85;
+    line-height: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.indexContent .articleBox .articleBottom{
+    font-size: 13px;
+    color: #999;
+}
+/*文章区结束*/
+/*首页结束*/
+/*图片区开始*/
+.imageContent .imageList{
+    position: relative;
+}
+.imageContent .imageList>.imageBox{
+    width: 300px;
+    padding-bottom: 15px;
+    position: absolute;
+}
+.imageContent .imageList .imageBox-in{
+    width: 270px;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.imageContent .imageList .imageBox .box{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+}
+.imageContent .imageList .imageBox .box>a{
+    text-decoration: none;
+}
+.imageContent .imageList .imageBox .box>a>img{
+    width: 270px;
+    transition: 0.8s;
+}
+.imageContent .imageList .imageBox .box>a>img:hover{
+    transform: scale(1.2);
+}
+.imageContent .imageList .imageBox .bottomInfo{
+    padding: 15px 20px 13px 20px;
+
+}
+.imageContent .imageBox .bottomInfo>.infoTop{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.imageContent .imageBox .bottomInfo>.infoTop>.publisher{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+.imageContent .imageBox .bottomInfo>.infoTop .head>img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    float: left;
+}
+.imageContent .imageBox .bottomInfo>.infoTop .nickName{
+    height: 30px;
+    display: inline-block;
+    float: left;
+}
+.imageContent .imageBox .bottomInfo>.infoTop .nickName>a{
+    color: #444;
+    text-decoration: none;
+    transition: 0.25s;
+    font-size: 13px;
+
+}
+.imageContent .imageBox .bottomInfo>.infoTop .nickName>a:hover{
+    color: #57ad68;
+}
+.imageContent .imageBox .likeIcon{
+    width: 25px;
+    height: 23px;
+    display: inline-block;
+    background: url("../images/like1.png") no-repeat 0 0;
+    background-size: 100%;
+    cursor: pointer;
+}
+.imageContent .imageBox .likeIcon:hover{
+    background-image: url("../images/like2.png");
+}
+.imageContent .imageBox.liked .bottomInfo>.infoTop .likeIcon{
+    background-image: url("../images/like2.png");
+}
+.imageContent .imageBox .bottomInfo .data{
+    font-size: 12px;
+    color: #999;
+}
+.imageContent .imageBox .deleteIcon{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    color: #ec6e6e;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.25s;
+    opacity: 0;
+}
+.imageContent .imageBox>.imageBox-in:hover .deleteIcon{
+
+    opacity: 1;
+}
+.imageContent .imageBox .bottomInfo .infoTop .deleteIcon:hover{
+    color: #ec3e3e;
+}
+/*图片区结束*/
+/*视频区开始*/
+.videoContent .videoList{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.videoContent .videoList>.videoBox{
+    width: 400px;
+    float: left;
+    padding-bottom: 15px;
+}
+.videoContent .videoList>.videoBox>.videoBox-in{
+    width: 370px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.videoContent .videoList>.videoBox .box{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.videoContent .videoList>.videoBox .box video{
+    width: 100%;
+    transition: 0.8s;
+
+}
+.videoContent .videoBox .bottomInfo{
+    padding: 5px 20px 13px 20px;
+    box-sizing: border-box;
+}
+.videoContent .videoBox .bottomInfo>.videoTitle{
+    padding-bottom: 8px;
+    font-size: 18px;
+    height: 18px;
+    width: 330px;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.videoContent .videoBox .bottomInfo>.videoTitle>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.videoContent .bottomInfo>.videoTitle>a:hover{
+    color: #57ad68;
+}
+.videoContent .videoBox>.bottomInfo>.publisher{
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin: 0;
+    color: #444;
+    width: 100%;
+}
+.videoContent .videoBox .deleteIcon{
+    float: right;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    color: #ec6e6e;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.videoContent .videoBox>.videoBox-in:hover .deleteIcon{
+    opacity: 1;
+}
+.videoContent .videoBox .deleteIcon:hover{
+    color: #ec3e3e;
+}
+.videoContent .videoBox .bottomInfo>.publisher>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.videoContent .bottomInfo>.publisher>a:hover{
+    color: #57ad68;
+}
+.videoContent .videoBox .bottomInfo>.data{
+    color: #999;
+    font-size: 12px;
+}
+.videoContent .videoBox .playIcon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    left: 22px;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: rgba(255,255,255,0.8);
+    transition: 0.8s;
+    user-select: none;
+    z-index: 9;
+}
+.videoContent .videoBox .box>.progressBar{
+    width: 340px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    position: absolute;
+    bottom: 15px;
+    border-radius: 2px;
+    margin-left: 15px;
+    display: none;
+}
+.videoContent .videoBox .box>.progressBar>.progress{
+    display: inline-block;
+    height: 4px;
+    border-radius: 2px;
+    width: 0;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    left: 0;
+}
+.videoContent .userPage-content .noContent{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    display: none;
+}
+/*视频区结束*/
+/*文章区开始*/
+.articleContent .articleList{
+    width: 100%;
+    margin: 0 auto;
+}
+.articleContent .articleList>.articleBox{
+    width: 100%;
+    height: 220px;
+    /*border: 1px solid #e8e8e8;*/
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.articleContent .articleBox .articleRight>img{
+    width: 300px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: -20px;
+    margin-top: -20px;
+}
+.articleContent .articleBox .articleTop{
+    position: relative;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+.articleContent .articleBox .articleTop>.articleTitle{
+    font-size: 24px;
+    height: 30px;
+    width: 580px;
+    line-height: 32px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 2px;
+}
+.articleContent .articleTop>.articleTitle>a{
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s;
+
+}
+.articleContent .articleTop>.articleTitle>a:hover{
+    color: #57ad68;
+}
+.articleContent .articleBox .articleTop>.writer{
+    font-size: 12px;
+}
+.articleContent .articleBox .deleteIcon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    float: right;
+    color: #ec6e6e;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.articleContent .articleBox:hover .deleteIcon{
+    opacity: 1;
+}
+.articleContent .articleBox .articleTop>.writer>.deleteIcon:hover{
+    color: #ec3e3e;
+}
+.articleContent .articleBox .articleTop>.writer>a{
+    color: #444;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.articleContent .articleBox .articleTop>.writer>a:hover{
+    color: #57ad68;
+}
+.articleContent .articleBox .articleTop>.writer::after{
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    border-bottom: 1px solid #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.articleContent .articleBox .articleContent{
+    position: relative;
+    margin-bottom: 30px;
+}
+.articleContent .articleBox .articleContent>p{
+    width: 100%;
+    overflow: hidden;
+    height: 75px;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 20px;
+    padding-top: 15px;
+    box-sizing: border-box;
+}
+.articleContent .articleContent .viewAll{
+    display: inline-block;
+    height: 20px;
+    color: #78bc85;
+    cursor: pointer;
+    line-height: 20px;
+    transition: 0.2s;
+    user-select: none;
+    margin-left: 10px;
+}
+.articleContent .articleContent .viewAll:hover a{
+    color: #57ad68;
+}
+.articleContent .articleContent .viewAll img{
+    width: 8px;
+    height: 10px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+.articleContent .articleContent .viewAll>a{
+    display: inline-block;
+    height: 20px;
+    color: #78bc85;
+    line-height: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.articleContent .articleBox .articleBottom{
+    font-size: 13px;
+    color: #999;
+}
+/*文章区结束*/
+/*选择框开始*/
+.confirm{
+    position: fixed;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 220px;
+    box-sizing: border-box;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.confirm>div:nth-child(1){
+    width: 100%;
+    height: 100px;
+}
+.confirm>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+}
+.confirm>p{
+    height: 70px;
+    font-size: 16px;
+}
+.confirm>.btnGroup{
+    width: 330px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-sizing: border-box;
+}
+.confirm>.btnGroup>span{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.confirm>.btnGroup>span:nth-child(1){
+    color: #999;
+    border-bottom-left-radius: 6px;
+    border-left: none;
+}
+.confirm>.btnGroup>span:nth-child(2){
+    color: #57ad68;
+    border-bottom-right-radius: 6px;
+    border-right: none;
+}
+/*选择框结束*/
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/

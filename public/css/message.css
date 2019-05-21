@@ -1,0 +1,455 @@
+body{
+    width: 100%;
+    height: 100%;
+    background: url("../images/index04.jpg") no-repeat center center;
+    background-size: 100% auto;
+    padding-top: 60px;
+    overflow: hidden;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+.message{
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.message>.messageNav{
+    width: 140px;
+    height: 100%;
+    background: hsla(0,0%,100%,.8);
+}
+.message>.messageNav>.navTop{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.message>.messageNav>.navTop>span{
+    font-weight: lighter;
+}
+.messageNav>.navBottom{
+    width: 100%;
+    list-style: disc;
+}
+.messageNav>.navBottom>li{
+    text-align: center;
+    color: #777;
+    font-weight: bold;
+    font-size: 14px;
+    height: 40px;
+    box-sizing: border-box;
+}
+.messageNav>.navBottom>li.selected{
+    color: #57ad68;
+}
+.messageNav>.navBottom>li.selected>a{
+    color: #57ad68;
+}
+.messageNav>.navBottom>li>a{
+    color: #777;
+    text-decoration: none;
+    height: 100%;
+    display: inline-block;
+}
+.messageNav>.navBottom>li:hover a{
+    color: #57ad68;
+}
+.messageNav>.navBottom>li:hover{
+    color: #57ad68;
+}
+.message>.messageMain{
+    width: 960px;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: hsla(0,0%,100%,.5);
+}
+.messageMain>.messageTop{
+    width: 100%;
+    height: 42px;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
+    color: #666;
+    border-radius: 4px;
+    line-height: 42px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+.messageMain>.messageBottom{
+    width: 100%;
+    height: auto;
+}
+.messageBottom>.selected{
+    display: block;
+}
+.messageMain>.messageBottom .informBox>li{
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
+    border-radius: 4px;
+    padding: 20px 15px 20px 15px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.messageMain>.messageBottom .likeBox>li{
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
+    border-radius: 4px;
+    padding: 20px 15px 20px 15px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.messageBottom .informBoxOut,.likeBoxOut{
+     overflow: hidden;
+     height: 620px;
+ }
+.messageBottom .informBox>li{
+    font-size: 12px;
+
+}
+.informBox>li>.messageTitle{
+    font-weight: bold;
+    line-height: 24px;
+    color: #333;
+}
+.messageBottom li>.time{
+    color: #999;
+    line-height: 22px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.informBox>li>.messageContent{
+    color: #666;
+    line-height: 24px;
+    margin-left: 10px;
+}
+.messageBottom .likeBox .likeIcon{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #d9534f;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.messageBottom .likeBox .userNickName>a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    margin-right: 10px;
+    line-height: 24px;
+    transition: 0.25s;
+
+}
+.messageBottom .likeBox .userNickName>a:hover{
+    color: #333;
+}
+.messageBottom .likeBox a{
+    line-height: 24px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #78bc85;
+    transition: 0.25s;
+
+}
+.messageBottom .likeBox a:hover{
+    color: #57ad68;
+}
+.messageBottom .messageBox{
+    width: 100%;
+    height: 620px;
+    background: #fff;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px 0 rgba(121,146,185,.54);
+    border-radius: 4px;
+}
+.messageBox .messageBoxTop{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.messageBoxTop>.messageBoxTopLeft{
+    display: inline-block;
+    width: 240px;
+    height: 35px;
+    border-bottom: 1px solid #e9eaec;
+    border-right: 1px solid #e9eaec;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding-left: 24px;
+    line-height: 35px;
+    color: #666;
+}
+.messageBoxTop>.messageBoxTopRight{
+    display: inline-block;
+    width: 700px;
+    border-bottom: 1px solid #e9eaec;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    line-height: 35px;
+}
+.messageBox>.messageBoxBottom{
+    width: 100%;
+    height: 585px;
+    display: flex;
+    justify-content: space-between;
+}
+.messageBoxBottom>div{
+    width: 240px;
+    position: relative;
+
+}
+.messageBoxBottom>div>.contacts{
+    width: 240px;
+    /*overflow-y: scroll;*/
+    overflow: hidden;
+}
+.contacts>li{
+    border-bottom: 1px solid #e9eaec;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 19px 24px;
+    position: relative;
+    overflow: hidden;
+}
+.contacts>li.curChat{
+    background: #f4f4f4;
+    border-bottom: 1px solid #fff;
+}
+.contacts>li:hover{
+    background: #f4f4f4;
+    border-bottom: 1px solid #fff;
+}
+.contacts>li>.contactsLiIn{
+    width: 192px;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+}
+.contacts>li>.contactsLiIn>.head{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.contactsLiIn>.head>a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.contacts>li>.contactsLiIn>.head>a>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.contacts>li>.contactsLiIn>div{
+    width: 150px;
+    height: 42px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.contacts>li>.contactsLiIn>div>p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.contacts>li>.contactsLiIn>div>.nickName>a{
+    color: #333;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+}
+.contacts>li>.contactsLiIn>div>.nickName>a:hover{
+    color: #57ad68;
+    transition: 0.25s;
+}
+.contacts>li>.contactsLiIn>div>.latest{
+    color: #999;
+    font-size: 12px;
+}
+.contacts>li>.notice{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d9534f;
+    right: 15px;
+    top: 30px;
+}
+.contacts>li>.delete{
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #aaa;
+    position: absolute;
+    left: -17px;
+    top: 34px;
+    font-weight: bold;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.contacts>li:hover .delete{
+    left: 5px;
+}
+#mCSB_1_scrollbar_vertical{
+    right: 0;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    width: 6px;
+}
+.messageBoxBottom>.chatContent{
+    width: 700px;
+    height: 585px;
+    background: #f4f4f4;
+    border-left: 1px solid #e9eaec;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.chatContent .chatContentTop{
+    width: 100%;
+    height: 435px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.chatContentTop .chatTop{
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    line-height: 30px;
+}
+.chatContentTop .chatRecords>li{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.chatContentTop .chatRecords .chatTime{
+    width: 100%;
+    height: 50px;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    line-height: 50px;
+}
+.chatContentTop .chatRecords .head{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+.chatRecords>.oneself>.head{
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.chatRecords .head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.chatRecords .chatContent{
+    max-width: 490px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+}
+.chatRecords>.oneself>.chatContent{
+    background: #7fb8f1;
+    border-radius: 5px;
+    position: relative;
+    float: right;
+}
+.chatRecords .chatContent>span{
+    color: #fff;
+    position: absolute;
+    left: -10px;
+    top: 10px;
+}
+.chatRecords>.oneself>.chatContent>span{
+    color: #7fb8f1;
+    right: -10px;
+    transform: rotate(180deg);
+}
+.chatRecords .chatContent>p{
+    max-width: 490px;
+    min-height: 37px;
+    padding: 8px 16px 8px 20px;
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+.chatRecords>.oneself>.chatContent>p{
+    color: #fff;
+}
+.chatContent>.chatContentBottom{
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border-top: 1px solid #d8d8d8;
+}
+.chatContentBottom>#chatFrame{
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border: none;
+    background: #f4f4f4;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.chatContentBottom>.frameBottom{
+    width: 100%;
+    height: 50px;
+}
+.chatContentBottom>.frameBottom>.words{
+    color: silver;
+    font-size: 12px;
+    float: right;
+    margin-right: 10px;
+    line-height: 30px;
+    font-style: italic;
+}
+.chatContentBottom>.frameBottom>.sendMessage{
+    float: right;
+    width: 80px;
+    height: 30px;
+    margin-right: 10px;
+    line-height: 30px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}

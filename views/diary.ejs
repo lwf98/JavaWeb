@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>personalSpace</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="fonts/iconfont.css">
+
+    <link rel="stylesheet" href="css/personalSpace.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script src="js/jquery-animate-css-rotate-scale.js"></script>
+
+    <script src="js/personalSpace.js"></script>
+
+    <script>
+        $(function () {
+            $("body").delegate("#diary","click",function () {
+                console.log(this.parentElement.firstElementChild.getAttribute("src"));
+                console.log(123);
+                $.ajax({
+                    type:"post",
+                    url:"/test/publicDiary",
+                    data:{
+                        src:this.parentElement.firstElementChild.getAttribute("src"),
+                        jianjie:this.previousElementSibling.previousElementSibling.innerHTML,
+                        content:this.previousElementSibling.innerHTML
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                    },
+                })
+                return false;
+            })
+
+
+            $("body").delegate(".delete","click",function () {
+                this.parentElement.parentElement.remove();
+                console.log(123);
+                $.ajax({
+                    type:"post",
+                    url:"/test/deleteDiary",
+                    data:{
+                        img:this.parentElement.firstElementChild.getAttribute("src"),
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                    },
+                })
+                return false;
+            })
+
+        })
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navTop">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="../images/cat.jpg" height="100%"></a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MyNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="MyNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="/personalSpace">个人空间</a></li>
+            <li><a href="#">多人空间</a></li>
+            <li><a href="/uploadFile">消息通知 <span class="badge">20</span></a></li>
+            <li><a href="/shareArea">分享广场</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><button class="btn navbar-btn loginIn"><a href="#" id="loginIn">登陆</a></button></li>
+        </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-default navbar-fixed-top" id="navTop">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="../images/cat.jpg" height="100%"></a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MyNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="MyNavbar">
+        <ul class="nav navbar-nav">
+            <li><a href="/personalSpace">个人空间</a></li>
+            <li><a href="#">多人空间</a></li>
+            <li><a href="/uploadFile">消息通知 <span class="badge">20</span></a></li>
+            <li><a href="/shareArea">分享广场</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><button class="btn navbar-btn loginIn"><a href="/login" id="loginIn">登陆</a></button></li>
+        </ul>
+    </div>
+</nav>
+<!--顶部区域开始-->
+<div class="topSpace">
+    <div class="info">
+        <span class="nickname">蜡笔小新</span>
+        <div class="headPortrait">
+            <img src="images/cat.jpg" alt="" class="img-circle img-thumbnail">
+        </div>
+        <a href="/test/personalData" class="editData">编辑个人资料</a>
+    </div>
+</div>
+<!--顶部区域结束-->
+
+<!--个人内容开始-->
+
+<div class="content">
+    <div class="tabControl">
+        <ul>
+            <li id="album" ><a href="/test"><img src="images/album.png" alt="">相册</a></li>
+            <li id="video" class=""><a href="/video"><img src="images/video.png" alt="">视频</a></li>
+            <li id="diary" class="selected"><a href="/diary"><img src="images/diary.png" alt="">日记</a></li>
+            <li id="historical"><a href="/uploadFile"><img src="images/historical.png" alt="">文件上传</a></li>
+        </ul>
+    </div>
+    <div class="contentArea">
+        <ul>
+            <li id="diaryContent">
+                <% for(var i in diary){ %>
+                    <div class="diaryBox">
+                        <div class="diaryBox-in" >
+                            <img  src=<%= diary[i].img%> >
+                            <h4><%= diary[i].jianjie%></h4>
+                            <h4 style="display: none" class="content"><%= diary[i].content%></h4>
+                            <h4 class="delete">删除</h4>
+                            <h4 id="diary">公开</h4>
+                            <p class="text-right"><%= diary[i].data%></p>
+                        </div>
+                    </div>
+
+                        <% } %>
+
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+
+
+<!--个人内容结束-->
+
+<!--图片查看蒙版-->
+<div class="bigImgCover">
+    <img src="images/close.png" alt="" class="closeImg">
+    <div class="bigImgCover-in">
+        <img src="" alt="">
+    </div>
+</div>
+
+<!--视频播放蒙版-->
+<div class="videoPlay">
+    <div class="videoPlay-in">
+        <div class="videoPlay-header">
+            <span class="videoPlay-title">视频简介 bbbbb</span>
+            <span class="videoClose glyphicon glyphicon-remove"></span>
+        </div>
+        <div class="videoPlay-main">
+            <video src="" controls="controls"></video>
+        </div>
+    </div>
+</div>
+
+<!--日记展开蒙版-->
+<div class="diaryUnfold">
+    <div class="diaryUnfold-main">
+        <img src="images/close.png" alt="" class="closeDiary">
+        <h2 id="h2">
+            情谊真挚！习近平欧洲之行的五个小故事</h2>
+        <ul>
+            <li class="currentImg"><img id="img5" src="images/cat.jpg" alt=""></li>
+          <!--  <li><img src="images/cat2.jpg" alt=""></li>
+            <li><img src="images/toTop.png" alt=""></li>
+            <li><img src="images/bg01.jpg" alt=""></li>-->
+        </ul>
+        <p id="p5">临近中午，意大利总统府镜厅，结束了会谈的两位元首并肩走进来。记者席上，快门声、播报声此起彼伏。
+
+            　　这是习近平主席2019年首次出访。21日傍晚抵达罗马，22日一早来到总统府，欢迎仪式、会谈、共见记者……活动环环相扣。
+
+            <br>
+            　　国旗前摆放了两个高脚讲台。两位元首站定，按共见记者惯例，东道主——白发苍苍的马塔雷拉总统率先致辞。他望着身旁的习近平主席：
+
+            　　“中国一个化工厂发生爆炸事故，我对遇难人员表示沉痛哀悼……”
+
+            　　江苏响水“3·21”爆炸事故震惊了中国，也让中国的朋友们为之哀叹。随习近平主席专机一同“降落”罗马的，还有他对这起事故第一时间作出的重要指示。意大利媒体评价道：“即使身在意大利访问也关心这起事件”;“习近平主席要求尽最大努力挽救生命”。
+
+            　　此刻，面对马塔雷拉总统的关切，面对中外媒体的镜头，习近平主席语气沉重：“感谢总统先生对在江苏响水化工厂爆炸事故中遇难人员的哀悼和对伤员的慰问，这体现了总统先生和意大利人民对中国人民的友好情谊。我在飞机上第一时间听到这个消息以后，立即指示国内尽快进行各种应急救援处理，最大限度地减少人员伤亡……”
+            <br>
+
+            　　翻开历史的尘封，中国汶川地震，意大利拉奎拉、阿玛特里切地震……废墟救援、家园重建，中意同舟共济的情谊，在时间长河里积淀。
+
+            　　罗马街头报刊亭，《晚邮报》上习近平主席署名文章的大幅报道让许多行人驻足。“中意友谊扎根在深厚的历史积淀之中。”他引用了意作家莫拉维亚的一句话：“友谊不是偶然的选择，而是志同道合的结果。”
+
+            　　欧亚大陆另一端的北京，习近平主席给罗马师生回信的消息登上报纸头版。这群选择了学习中文的青年，也因此推开了人生一扇新的大门，他们的梦想里有了多彩的中国。习近平主席在回信中勉励他们，做新时代的马可·波罗。
+
+            　　出访途中谈及此事，习近平主席说，“我想当年的马可·波罗，通过古丝绸之路促进中欧文明的沟通交流，意义是深远的。一代代友好使者追随他的足迹，做中意友好的桥梁。中意都是热爱和平的国家，我们也肩负着赋予本国人民美好生活的使命。我们要延续这份历史的责任。”　临近中午，意大利总统府镜厅，结束了会谈的两位元首并肩走进来。记者席上，快门声、播报声此起彼伏。
+
+            　　这是习近平主席2019年首次出访。21日傍晚抵达罗马，22日一早来到总统府，欢迎仪式、会谈、共见记者……活动环环相扣。
+            <br>
+
+            　　国旗前摆放了两个高脚讲台。两位元首站定，按共见记者惯例，东道主——白发苍苍的马塔雷拉总统率先致辞。他望着身旁的习近平主席：
+
+            　　“中国一个化工厂发生爆炸事故，我对遇难人员表示沉痛哀悼……”
+
+            　　江苏响水“3·21”爆炸事故震惊了中国，也让中国的朋友们为之哀叹。随习近平主席专机一同“降落”罗马的，还有他对这起事故第一时间作出的重要指示。意大利媒体评价道：“即使身在意大利访问也关心这起事件”;“习近平主席要求尽最大努力挽救生命”。
+
+            　　此刻，面对马塔雷拉总统的关切，面对中外媒体的镜头，习近平主席语气沉重：“感谢总统先生对在江苏响水化工厂爆炸事故中遇难人员的哀悼和对伤员的慰问，这体现了总统先生和意大利人民对中国人民的友好情谊。我在飞机上第一时间听到这个消息以后，立即指示国内尽快进行各种应急救援处理，最大限度地减少人员伤亡……”
+
+            　　翻开历史的尘封，中国汶川地震，意大利拉奎拉、阿玛特里切地震……废墟救援、家园重建，中意同舟共济的情谊，在时间长河里积淀。
+
+            　　罗马街头报刊亭，《晚邮报》上习近平主席署名文章的大幅报道让许多行人驻足。“中意友谊扎根在深厚的历史积淀之中。”他引用了意作家莫拉维亚的一句话：“友谊不是偶然的选择，而是志同道合的结果。”
+            <br>
+
+            　　欧亚大陆另一端的北京，习近平主席给罗马师生回信的消息登上报纸头版。这群选择了学习中文的青年，也因此推开了人生一扇新的大门，他们的梦想里有了多彩的中国。习近平主席在回信中勉励他们，做新时代的马可·波罗。
+
+            　　
+        </p>
+    </div>
+</div>
+</body>
+</html>

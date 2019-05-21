@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人界面-文章</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/userPage-article.css">
+    <script src="js/jquery-3.3.1.js"></script>
+   <!-- <script src="js/nav.js"></script>-->
+    <script src="js/userPage.js"></script>
+    <script>
+        $(function () {
+            //删除日记
+            $("body").delegate('.diarydeleteIcon','click',function () {
+                console.log('点了我了')
+                let $this = this;
+                $.ajax({
+                    type:"post",
+                    url:"/test/deleteDiary",
+                    data:{
+                        jianjie:$this.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                        console.log(result)
+                    }
+                })
+
+            })
+        })
+    </script>
+</head>
+<body>
+<nav class="navTop">
+    <div class="nav-in">
+                    <span class="brand">
+                    <a href="#"><img src="../images/logo.jpg" alt=""></a>
+           </span>
+        <ul class="navTab">
+            <li><a href="/index">首页</a></li>
+            <li><a href="/shareArea">图片</a></li>
+            <li><a href="/share/share-video">视频</a></li>
+            <li><a href="/share/share-diary">阅读</a></li>
+        </ul>
+        <div class="navRight">
+            <a href="/login" class="login">登陆/注册</a>
+            <ul>
+                <li class="head"><img src=<%= user[0].uimg%> alt=""></li>
+                <li class="nickName"><%= user[0].Nickname%></li>
+                <li class="line">|</li>
+                <li><a href="/login">退出登陆</a></li>
+                <li><a href="/message">消息通知</a></li>
+                <li><a href="/filePublish">内容发布</a></li>
+                <li><a href="/test">个人空间</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="userPage">
+    <div class="userPage-top" style=" width: 100%;
+            height: 250px;
+            background: url(<%= (user[0].Bgimg).replace('\\','/').replace('\\','/')%>) no-repeat center center;
+            background-size: cover;
+            border-radius: 5px 5px 0 0;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 0 0 1px #eee;
+            box-sizing: border-box;">
+        <div class="userPage-top-left">
+            <div class="head">
+                <img src=<%= user[0].uimg%>> alt="">
+            </div>
+            <div class="info">
+                <h4 class="nickName">
+                    <%= user[0].Nickname%>
+                </h4>
+                <p class="intro">
+                    <%= user[0].qianming%>
+                </p>
+            </div>
+
+        </div>
+        <div class="userPage-top-right">
+            <!--<button class="sendMessage"><a href="message.ejs" target="_blank">私信</a></button>-->
+            <button href="userSet.html" class="userSet"><a href="/userSet" target="_blank">个人设置 <span class="iconfont icon-sanjiao"></span></a></button>
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="nav-home "><a href="/test">主页</a></li>
+            <li class="nav-pic"><a href="/image">图片</a></li>
+            <li class="nav-video"><a href="/video">视频</a></li>
+            <li class="nav-diary selected"><a href="/diary">文章</a></li>
+        </ul>
+        <div>
+            <p></p>
+            <span></span>
+        </div>
+    </div>
+    <div class="userPage-content">
+        <ul class="articleList">
+            <% for(var i in diary){ %>
+            <li class="articleBox">
+                <div class="articleLeft">
+                    <div class="articleTop">
+                        <p class="articleTitle">
+                            <a href="/share/diary/?src=<%= diary[i].img%>" target="_blank"><%= diary[i].jianjie%></a>
+                        </p>
+                        <p class="writer">
+                            <a href="" target="_blank">By / <%= user[0].Nickname%></a>
+                            <!--当登陆者时本人时deleteIcon显示-->
+                            <span class="diarydeleteIcon deleteIcon iconfont icon-shanchu" ></span>
+                        </p>
+                    </div>
+                    <div class="articleContent">
+                        <p><%= diary[i].content%>
+                        </p>
+
+                    </div>
+                    <div class="articleBottom">
+                        <span class="watchNum"><%= diary[i].liulan%></span>
+                        次阅读 | 评论:
+                        <span class="comNum"><%= diary[i].views%></span>
+                        | 喜欢:
+                        <span class="likeNum"><%= diary[i].goods%></span>
+                    </div>
+                </div>
+                <div class="articleRight">
+                    <!--配图区,有就添加一个img, 没有就不用添加-->
+                    <img src=<%= diary[i].img%> alt="">
+                </div>
+            </li>
+                 <% } %>
+        </ul>
+        <p class="noContent">
+            这里还没有被上传的内容
+        </p>
+    </div>
+</div>
+<div class="confirm">
+    <div>
+        <img src="images/confirm-img.png" alt="">
+    </div>
+    <p></p>
+    <div class="btnGroup">
+        <span>取消</span>
+        <span>确认</span>
+    </div>
+</div>
+<div class="hint">
+    <div>
+        <img src="images/hint-ok.png" alt="">
+    </div>
+    <p></p>
+</div>
+</body>
+</html>

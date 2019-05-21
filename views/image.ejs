@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片查看</title>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="stylesheet" href="../../css/image.css">
+    <script src="../../js/jquery-3.3.1.js"></script>
+    <script src="../../js/jquery.mCustomScrollbar.js"></script>
+    <script src="../../js/imageAndVideo.js"></script>
+    <script>
+        $(function () {
+            //点赞插图片点赞表
+            $("body").delegate('.likeNum','click',function () {
+                console.log('点了小心心了');
+                var img = document.getElementById('img');
+                console.log(img);
+                $.ajax({
+                    type:"post",
+                    url:"/share/imggoods",
+                    data:{
+                        src:img.getAttribute("src"),
+                        keys:$("#aa").attr('href').toString().substr(10)
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                        console.log(result)
+                    }
+                })
+
+            })
+
+
+            //点评论插图片评论表
+            $(".send").click(function () {
+                console.log('发表评落了');
+
+                $.ajax({
+                    type:"post",
+                    url:"/test/comment",
+                    data:{
+                        src:$('#img').attr("src"),
+                        views:$("#textareas").val(),
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                     window.location.reload(false);
+                    }
+                })
+            })
+
+
+            //判断评论是不是自己的
+            $.ajax({
+                type:"post",
+                url:"/test/comment-panduan",
+                data:{
+                    src:$('#img').attr("src"),
+                },
+                dataType:'json',
+                success:function (result) {
+                    console.log(result[0]);
+                    for(let i = 0;i<result[1];i++){
+
+                        var index = $($("li .nickName")[i].innerHTML).attr('href').indexOf('?');
+                        if( $($("li .nickName")[i].innerHTML).attr('href').substr(index+1)==result[0]){
+                          $( $(".comment .a2")[i]).css({
+                              display:"block"
+                          });
+                        }
+
+                        }
+                    }
+            })
+
+
+
+            //判断我又没有点这张图片
+            $.ajax({
+                type:"post",
+                url:"/test/img-goods",
+                data:{
+                    src:$('#img').attr("src"),
+
+                },
+                dataType:'json',
+                success:function (result) {
+                    if(result.like==true){
+                        $('.main').addClass('liked')
+                    }else{
+                        $('.main').removeClass('liked')
+                    }
+                }
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+<nav class="navTop">
+           <div class="nav-in">
+                    <span class="brand">
+                    <a href="#"><img src="../../images/logo.jpg" alt=""></a>
+           </span>
+                  <ul class="navTab">
+                      <li><a href="/index">首页</a></li>
+                      <li><a href="/shareArea">图片</a></li>
+                      <li><a href="/share/share-video">视频</a></li>
+                            <li><a href="/share/share-diary">阅读</a></li>
+                        </ul>
+                   <div class="navRight">
+                           <a href="/login" class="login">登陆/注册</a>
+                            <ul>
+                                    <li class="head"><img src=<%= '../' + user[0].uimg%> alt=""></li>
+                                    <li class="nickName"><%= user[0].Nickname%></li>
+                                   <li class="line">|</li>
+                                    <li><a href="/login">退出登陆</a></li>
+                                    <li><a href="/message">消息通知</a></li>
+                                 <li><a href="/filePublish">内容发布</a></li>
+                                  <li><a href="/test">个人空间</a></li>
+                            </ul>
+                   </div>
+               </div>
+      </nav>
+
+    <div class="main">
+        <div class="image">
+            <div class="imageInfo">
+                <div class="publisher">
+                    <div class="publisherLeft">
+                        <img src="<%= '../'+ image[0].uimg%>" alt="">
+                    </div>
+                    <div class="publisherRight">
+                        <p class="nickName"><a id="aa" href="/userPage?<%= image[0].name%>"><%= image[0].Nickname%></a></p>
+                        <p class="date"><%= image[0].date%></p>
+                    </div>
+                </div>
+                <span class="likeNum">
+                   <%= image[0].goods%>
+                </span>
+            </div>
+            <div class="bigImage">
+                <img id="img" src=<%= image[0].src%> alt="">
+            </div>
+        </div>
+        <div class="commentArea">
+            <div class="commentSend">
+                <div>
+                    <textarea id="textareas" name=""  maxlength="300" cols="30" rows="10" placeholder="说点什么吧~"></textarea>
+                </div>
+
+
+                <div><button class="send">发表评论</button></div>
+            </div>
+            <div class="commentsShow ">
+                <div class="title">
+                    评论 <span>(<%= comment.length%>)</span>
+                </div>
+
+
+
+                <div class="comments scrollY">
+                    <ul class="commentsList">
+                        <% for(var i in comment){ %>
+                        <li class="comment">
+                        <div class="commentTop">
+                            <div class="commentTopLeft">
+                                <div class="head">
+                                    <img src=<%='../'+ comment[i].uimg%> alt="">
+                                </div>
+                                <div>
+                                    <p class="nickName"><a href="/userPage?<%= comment[i].name%>"><%= comment[i].Nickname%></a></p>
+                                    <p class="date"><%= comment[i].date%></p>
+                                </div>
+                            </div>
+                            <div class="commentTopRight">
+                                <a  href="javascript:;" class="comReport a1">举报</a>
+                                <a href="javascript:;" class="comDelete1 a2">删除</a>
+                            </div>
+                        </div>
+                        <div class="commentContent">
+                            <p>
+                                <%= comment[i].views%>
+                            </p>
+                        </div>
+                    </li>
+                        <% } %>
+                    </ul>
+                </div>
+
+
+
+            </div>
+            <p class="noCom">欢迎您发出第一条评论</p>
+        </div>
+    </div>
+    <div class="confirm">
+        <div>
+            <img src="../../images/confirm-img.png" alt="">
+        </div>
+        <p></p>
+        <div class="btnGroup">
+            <span>取消</span>
+            <span>确认</span>
+        </div>
+    </div>
+    <div class="hint">
+        <div>
+            <img src="../../images/hint-ok.png" alt="">
+        </div>
+        <p></p>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

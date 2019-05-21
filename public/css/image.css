@@ -1,0 +1,385 @@
+body{
+    width: 100%;
+    background: #f8f8f8;
+    color: #333;
+    font-family: siyuan;
+}
+.main{
+    width: 1200px;
+    margin: 70px auto 30px auto;
+    background: #f8f8f8;
+    /*overflow: hidden;
+    display: flex;
+    justify-content: space-between;*/
+}
+.main>.image{
+    width: 700px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    padding: 20px 10px 10px 10px;
+    float: left;
+}
+.main>.image>.imageInfo{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.imageInfo>.publisher{
+    height: 100%;
+    overflow: hidden;
+}
+.publisher>.publisherLeft{
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.publisher>.publisherLeft>img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.publisherRight{
+    float: left;
+    margin-left: 10px;
+    line-height: 25px;
+}
+.publisherRight>p{
+    margin: 0;
+}
+.publisherRight>.nickName>a{
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    transition: 0.25s;
+}
+.publisherRight>.nickName>a:hover{
+    color: #57ad68;
+}
+.publisherRight>.date{
+    font-size: 12px;
+    color: #999;
+}
+.imageInfo>.likeNum{
+    display: inline-block;
+    height: 23px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    background: url("../images/like1.png") no-repeat left top;
+    background-size: 25px 23px;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+    margin-top: 13px;
+}
+.liked .imageInfo>.likeNum{
+    background-image: url("../images/like2.png");
+}
+.likeNum:hover{
+    background-image: url("../images/like2.png") !important;
+}
+.image>.bigImage{
+    width: 100%;
+}
+.image>.bigImage>img{
+    width: 100%;
+}
+/*评论发送开始*/
+.commentArea{
+    width: 490px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    padding: 30px 12px 10px 12px;
+    float: right;
+    overflow-x: hidden;
+}
+.commentSend{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+.commentSend>div:nth-child(1){
+    width: 360px;
+    height: 110px;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+.commentSend textarea{
+    color: #666;
+    outline: none;
+    width: 360px;
+    height: 110px;
+    resize: none;
+    border: none;
+    padding: 16px 25px 16px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: -1px;
+    overflow-x: hidden;
+}
+.commentSend>div{
+    position: relative;
+}
+.commentSend .send{
+    width: 100px;
+    height: 36px;
+    margin-top: 30px;
+    border-radius: 18px;
+    border: none;
+    background: #78bc85;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 20px;
+
+}
+.commentSend .send:hover{
+    background: #57ad68;
+}
+.commentSend .send::after{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    border-top: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    background: #fff;
+    position: absolute;
+    left: -8px;
+    top: 42px;
+    transform: rotate(45deg);
+}
+/*评论发送结束*/
+/*评论区开始*/
+.commentsShow{
+    width: 100%;
+}
+.commentsShow>.title{
+    width: 75px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    height: 33px;
+    line-height: 33px;
+}
+.commentsShow>.title>span{
+    font-size: 13px;
+    margin-left: 3px;
+}
+.commentsShow>.comments{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    /*height: 400px;*/
+
+    overflow: hidden;
+}
+.comments .commentsList{
+    width: 100%;
+}
+.comments .commentsList>.comment{
+    width: 100%;
+
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.commentTop{
+    width: 100%;
+}
+.commentTop>.commentTopLeft>.head{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.commentTopLeft>.head>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.commentTopLeft>div{
+    float: left;
+}
+.commentTopLeft .nickName>a{
+    font-size: 13px;
+    margin-right: 10px;
+    color: #666;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.commentTopLeft .nickName>a:hover{
+    color: #57ad68;
+}
+.commentTopLeft .date{
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.commentContent{
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    width: 450px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+    margin-bottom: 30px;
+    text-indent: 2em;
+}
+.commentTopRight{
+    height: 50px;
+    line-height: 50px;
+}
+.commentTopRight>.a1{
+    color: #666;
+    display: block;
+    text-decoration: none;
+    float: right;
+    margin-right: 8px;
+    font-size: 12px;
+}
+.commentTopRight>.a2{
+    color: #666;
+    display: none;
+    text-decoration: none;
+    float: right;
+    margin-right: 8px;
+    font-size: 12px;
+}
+.commentTopRight>a:nth-child(1){
+    margin-right: 15px;
+}
+.commentTopRight>a:hover{
+    color: #333;
+}
+/*.comment:hover .commentTopRight>a{
+    display: block;
+}*/
+.commentRight>a.comDelete{
+    /*display: none;*/
+}
+.commentArea>.noCom{
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: none;
+}
+/*评论区结束*/
+#mCSB_1_scrollbar_vertical{
+    right: 7px;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+    width: 6px;
+}
+/*选择框开始*/
+.confirm{
+    position: fixed;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 220px;
+    box-sizing: border-box;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.confirm>div:nth-child(1){
+    width: 100%;
+    height: 100px;
+}
+.confirm>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+}
+.confirm>p{
+    height: 70px;
+    font-size: 16px;
+}
+.confirm>.btnGroup{
+    width: 330px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-sizing: border-box;
+}
+.confirm>.btnGroup>span{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.confirm>.btnGroup>span:nth-child(1){
+    color: #999;
+    border-bottom-left-radius: 6px;
+    border-left: none;
+}
+.confirm>.btnGroup>span:nth-child(2){
+    color: #57ad68;
+    border-bottom-right-radius: 6px;
+    border-right: none;
+}
+/*选择框结束*/
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/

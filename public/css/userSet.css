@@ -1,0 +1,248 @@
+body{
+    width: 100%;
+    padding-top: 70px;
+    background: #f8f8f8;
+}
+.main{
+    width: 900px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    margin: 0 auto;
+}
+.main .mainTop{
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+}
+.main .mainTop>.bgUpload{
+    width: 150px;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    line-height: 35px;
+    background: rgba(255,255,255,0.2);
+    color: rgba(0,0,0,0.7);
+}
+.main .mainTop>.bgUpload>i{
+    width: 25px;
+    height: 35px;
+    display: inline-block;
+    font-size: 20px;
+}
+.main .mainTop>.bgUpload>input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.main .mainBottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main .mainBottom>.mainLeft{
+    width: 200px;
+}
+.main .mainBottom>.mainLeft>.headUpload{
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    position: relative;
+    box-sizing: border-box;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.main .mainBottom>.mainLeft>.headUpload>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.main .mainBottom>.mainLeft>.headUpload>.cover{
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 150px;
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+}
+.main .mainBottom>.mainLeft>.headUpload>.cover>i{
+    width: 25px;
+    height: 35px;
+    display: inline-block;
+    font-size: 20px;
+}
+.headUpload>.cover>input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 50%;
+}
+.main .mainBottom>.mainRight{
+    width: 700px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+.main .mainBottom>.mainRight>div{
+    width: 100%;
+    height: 50px;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.main .mainBottom>.mainRight>div>label{
+    font-size: 18px;
+    margin-right: 20px;
+}
+.main .mainBottom>.mainRight>.nickName>input{
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+}
+.mainRight>div>input,select{
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+}
+#phoneNum::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#phoneNum::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.main .mainBottom>.mainRight>div.intro{
+    height: auto;
+}
+.main .mainBottom>.mainRight>div.intro>label{
+    vertical-align: top;
+}
+.main .mainBottom>.mainRight>div.intro>textarea{
+    resize: none;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    height: 100px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.main .mainBottom>.mainRight>.controlBtn{
+    width: 650px;
+    margin-top: 50px;
+    text-align: right;
+    margin-bottom: 50px;
+    border: none;
+}
+.controlBtn>input{
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+}
+.controlBtn>input:hover{
+    background: #e8e8e8;
+}
+.controlBtn>input[type="submit"]{
+    width: 100px;
+    background: #78bc85;
+    border: 1px solid #57ad68;
+    color: #fff;
+}
+.controlBtn>input[type="submit"]:hover{
+    background: #57ad68;
+}
+.main .mainBottom .warning{
+    width: 100%;
+    font-size: 13px;
+    color: #666;
+    text-align: right;
+}
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../js/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/layui.css">
+    <script src="../js/layui.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/resource.js"></script>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function(){
+            var element = layui.element;
+
+            //…
+        });
+    </script>
+    <script>
+        $(function () {
+            $("body").delegate("#a","click",function () {
+                this.parentElement.parentElement.remove();
+            })
+        })
+    </script>
+    <script>
+        $(function () {
+            $("#b").click(function () {
+                let $this = this;
+                $("img").attr('src',$this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML)
+                $("img").slideDown(500,function () {
+
+                });
+                return false
+            })
+            $("html").click(function () {
+                $("img").slideUp(500,function () {
+
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+                  <img src="../images/cat.jpg" alt="" style="display: none ;position: absolute;top:40%;left: 40%;width: 300px;height: 300px;z-index: 10000">
+
+                  <ul class="layui-nav" lay-filter="">
+                      <li class="layui-nav-item"><a href="">管理系统</a></li>
+                      <li class="layui-nav-item layui-this"><a href="">用户管理</a></li>
+                      <li class="layui-nav-item">
+                          <a href="javascript:;" >图片管理</a>
+                          <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                              <dd><a href="/admin/admin-img">个人图片管理</a></dd>
+                              <dd><a href="">公共图片管理</a></dd>
+                          </dl>
+                      </li>
+                      <li class="layui-nav-item">
+                          <a href="javascript:;" >视频管理</a>
+                          <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                              <dd><a href="/admin/admin-video">个人视频管理</a></dd>
+                          </dl>
+                      </li>
+                      <li class="layui-nav-item">
+                          <a href="javascript:;" >日记管理</a>
+                          <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                              <dd><a href="/admin/admin-diary">个人日记管理</a></dd>
+
+                          </dl>
+                      </li>
+                      <li class="layui-nav-item"><a href="">评论管理</a></li>
+                      <li class="layui-nav-item"><a href="">私信管理</a></li>
+                      <li class="layui-nav-item" style="margin-left: 400px">
+                          <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+                          <dl class="layui-nav-child">
+                              <dd><a href="javascript:;">修改信息</a></dd>
+                              <dd><a href="javascript:;">安全管理</a></dd>
+                              <dd><a href="javascript:;">退了</a></dd>
+                          </dl>
+                      </li>
+                  </ul>
+<span class="layui-breadcrumb" style="margin-top: 10px">
+  <a href="">首页</a>
+  <a href="">用户管理</a>
+
+</span>
+<table class="layui-table" style="margin-top: 10px" id="div2">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>图片id</th>
+        <th>路径</th>
+        <th>上传者id</th>
+        <th>上传者姓名</th>
+        <th>点赞量</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr v-for="(value,index) in images">
+        <td>{{value._id}}</td>
+        <td>{{value.src}}</td>
+        <td>{{value.id}}</td>
+        <td>{{value.name}}</td>
+        <td>{{value.goods}}</td>
+        <td><a id="a" href="/admin/delete-user" @click.prevent.stop="del(value._id)">删除</a>
+            <a id="b" href="#" >查看</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div id="test1" style="margin: 0 500px;width: 350px"></div>
+
+<script>
+
+    let vm2 = new Vue({
+        el:"#div2",
+        data:{
+            images:[
+                { "_id" :"5ca04781960ca338f8d4c202", "id" : "5ca017b771bc722de820cf56", "data" : "Sun Mar 31 2019 12:52:17 GMT+0800 (GMT+08:00)", "jianjie" : "南京", "content" : "好爱", "img" : " \\images\\upload_bef575d95ecc2a615a82eba2a8f93269.jpg", "__v" : 0 },
+                { "_id" : "5ca04781960ca338f8d4c202", "id" : "5ca017b771bc722de820cf56", "data" : "Sun Mar 31 2019 12:52:17 GMT+0800 (GMT+08:00)", "jianjie" : "南京", "content" : "好爱", "img" : " \\images\\upload_bef575d95ecc2a615a82eba2a8f93269.jpg", "__v" : 0 }
+            ]
+        },
+        methods:{
+            del(id){
+                //发送get请求
+                this.$http.get("/admin/delete-img/?"+ "_id=" + id).then(function(res){
+                   console.log('删除成功')
+                },function(){
+                    console.log('请求失败处理');
+                });
+
+            }
+        },
+    })
+
+</script>
+<script>
+
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count:<%= image.length%>//数据总数，从服务端得到
+            ,jump: function(obj, first){
+                $.ajax({
+                    type:"post",
+                    url:"/admin/admin-img",
+                    data:{
+                        skip:obj.curr,
+                        limit:obj.limit,
+                    },
+                    dataType:'json',
+                    success:function (result) {
+                        vm2.images = result;
+                    }
+                })
+                //obj包含了当前分页的所有参数，比如：
+                console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                console.log(obj.limit); //得到每页显示的条数
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

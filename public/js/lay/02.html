@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../lib/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="../css/layui.css">
+    <script src="../layui.js"></script>
+    <script>
+        //注意：导航 依赖 element 模块，否则无法进行功能性操作
+        layui.use('element', function(){
+            var element = layui.element;
+
+            //…
+        });
+    </script>
+    <script>
+        layui.use('laypage', function(){
+            var laypage = layui.laypage;
+
+            //执行一个laypage实例
+            laypage.render({
+                elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                ,count: 40 //数据总数，从服务端得到
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+<ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a href="">管理系统</a></li>
+    <li class="layui-nav-item layui-this"><a href="">用户管理</a></li>
+    <li class="layui-nav-item">
+        <a href="javascript:;" >图片管理</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="">个人图片管理</a></dd>
+            <dd><a href="">公共图片管理</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;" >视频管理</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="">个人视频管理</a></dd>
+            <dd><a href="">公共视频管理</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;" >日记管理</a>
+        <dl class="layui-nav-child"> <!-- 二级菜单 -->
+            <dd><a href="">个人日记管理</a></dd>
+            <dd><a href="">公共日记管理</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="">评论管理</a></li>
+    <li class="layui-nav-item"><a href="">私信管理</a></li>
+    <li class="layui-nav-item" style="margin-left: 400px">
+        <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">修改信息</a></dd>
+            <dd><a href="javascript:;">安全管理</a></dd>
+            <dd><a href="javascript:;">退了</a></dd>
+        </dl>
+    </li>
+</ul>
+<span class="layui-breadcrumb" style="margin-top: 10px">
+  <a href="">首页</a>
+  <a href="">用户管理</a>
+
+</span>
+<table class="layui-table" style="margin-top: 10px">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>电话</th>
+        <th>电话</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+        <td>11523</td>
+        <td>顾胜</td>
+        <td>520920</td>
+        <td>18714999065</td>
+        <td>18714999065</td>
+        <td><button class="layui-btn layui-btn-xs">删除</button></td>
+    </tr>
+    <tr>
+        <td>11523</td>
+        <td>顾胜</td>
+        <td>520920</td>
+        <td>18714999065</td>
+        <td>18714999065</td>
+        <td><button class="layui-btn layui-btn-xs">删除</button></td>
+    </tr>
+
+    </tbody>
+</table>
+<div id="test1" style="margin: 0 500px;width: 350px"></div>
+</body>
+</html>

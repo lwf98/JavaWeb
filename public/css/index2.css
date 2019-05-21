@@ -1,0 +1,378 @@
+
+nav.navTop.pageTop{
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid transparent;
+}
+.navTop.pageTop .nav-in>.navTab>li{
+    border: none;
+}
+.navTop.pageTop .nav-in>.navTab>li>a{
+    color: #fff;
+    transition: 0.25s;
+}
+.navTop.pageTop .nav-in>.navTab>li>a:hover{
+    font-weight: bold;
+    background: rgba(0,0,0,0.4);
+}
+.navTop.pageTop .nav-in>.navRight>ul>li>a{
+    color: #fff;
+}
+.navTop.pageTop .nav-in>.navRight>ul>li>a:hover{
+    color: #5cb85c;
+}
+.navTop.pageTop .nav-in>.navRight>ul>li{
+    color: #fff;
+}
+.main{
+    width: 100%;
+}
+.main>.mainTop{
+    width: 100%;
+    height: 520px;
+    /*background: pink;*/
+}
+.main>.mainTop{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box;
+    padding-top: 180px;
+}
+.main>.mainTop>.slogan{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    letter-spacing: 0.1em;
+}
+.main>.mainContent{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.mainContent>.title{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+.mainContent>.title::after{
+    display: block;
+    position: absolute;
+    top: 28px;
+    width: 44%;
+    content: "";
+    border-top: 1px solid #ededed;
+    left: 0;
+}
+.mainContent>.title::before{
+    display: block;
+    position: absolute;
+    top: 28px;
+    width: 44%;
+    content: "";
+    border-top: 1px solid #ededed;
+    right: 0;
+}
+.mainContent>.title>span{
+    display: inline-block;
+    font-size: 16px;
+    color: #999;
+}
+.recommend-container{
+    width: 1200px;
+    margin: 10px auto;
+}
+.recommend-container>div{
+    width: 300px;
+    height: 300px;
+    padding: 2px;
+    background: #fff;
+    box-sizing: border-box;
+    float: left;
+}
+.recommend-container>.imageBox{
+    position: relative;
+}
+.recommend-container>.imageBox>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.recommend-container>.imageBox>a>img{
+    width: 296px;
+    height: 296px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.recommend-container>.imageBox>a>img:hover{
+    opacity: 0.8;
+}
+.recommend-container>.infoBox{
+    padding: 0 2px;
+}
+.recommend-container>.infoBox>div{
+    width: 100%;
+    height: 146px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    background: #fafafa;
+    position: relative;
+    margin-left: -2px;
+}
+.recommend-container>.infoBox>.bottom{
+    margin: 0;
+}
+.recommend-container>.infoBox>div:nth-child(1){
+    margin-top: -5px;
+}
+.recommend-container>.infoBox>div:hover{
+    background: #f5f5f5;
+}
+.recommend-container>.infoBox>div>.type{
+    width: 100%;
+    height: 30px;
+    color: #ddd;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: fzjx;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.recommend-container>.infoBox>div>.line{
+    width: 120px;
+    display: inline-block;
+    height: 1px;
+    border-bottom: 1px solid #ddd;
+}
+.recommend-container>.infoBox>div>.title{
+    color: #222;
+    margin-bottom: 3px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.recommend-container>.infoBox>div>.title>a{
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    letter-spacing: 1px;
+    transition: 0.25s;
+}
+.recommend-container>.infoBox>div>.title>a:hover{
+    color: #5cb85c;
+}
+.recommend-container>.infoBox>div>.data{
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.recommend-container>.infoBox>div>.publisher{
+    font-size: 14px;
+    color: #999;
+}
+.recommend-container>.infoBox >div>.publisher>a{
+    color: #5cb85c;
+    text-decoration: none;
+}
+.recommend-container>.infoBox>div>.publisher>a:hover{
+    text-decoration: underline;
+}
+.recommend-container>.infoBox>div>.iconfont{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    z-index: 9;
+    transform: scaleY(2) rotate(-180deg) translateY(50%);
+    color: #fafafa;
+}
+.recommend-container>.infoBox>.bottom{
+    text-align: right;
+}
+.recommend-container>.infoBox>.top>.iconfont{
+    left: -13px;
+}
+.recommend-container>.infoBox>.bottom>.iconfont{
+    right: -12px;
+    transform: scaleY(2) rotate(0) translateY(-50%);
+}
+.recommend-container>div>.info{
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    background: rgba(0,0,0,.4);
+    width: auto;
+    height: 56px;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    z-index: 19;
+    display: none;
+}
+.recommend-container>div.innerInfo>.info{
+    display: block;
+}
+.recommend-container>div>.info>.type{
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 56px;
+    padding: 0;
+    top: 0;
+    background-color: rgba(50,50,50,.4);
+    background-position: -236px 7px;
+    border: 0 none;
+    box-sizing: border-box;
+    z-index: 19;
+}
+.recommend-container>div>.info>.type>span{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    color: rgba(255,255,255,0.6);
+    margin-top: 5px;
+}
+.recommend-container>div>.info>h2{
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+}
+.recommend-container>div>.info>h2>a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.25s;
+}
+.recommend-container>div>.info>h2>a:hover{
+    color: #5cb85c;
+}
+.recommend-container>div>.info>.data{
+    line-height: 1.35em;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 3px;
+}
+.recommend-container>.videoBox{
+    position: relative;
+}
+.recommend-container>.videoBox>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.recommend-container>.videoBox >video{
+    width: 296px;
+    height: 296px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.recommend-container>.videoBox img{
+    width: 296px;
+    height: 296px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+}
+.recommend-container>.videoBox>.iconfont{
+    position: absolute;
+    color: rgba(255,255,255,0.5);
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    transition: 0.25s;
+}
+.recommend-container>.videoBox>.playIcon{
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    color: rgba(255,255,255,0.7);
+    opacity: 0;
+}
+.recommend-container>.videoBox:hover .iconfont{
+    opacity: 0;
+}
+.recommend-container>.videoBox:hover .iconfont.playIcon{
+    opacity: 1;
+}
+.recommend-container>.articleBox{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 200% 200%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+    width: 296px;
+    height: 296px;
+    margin: 2px;
+    padding: 0;
+}
+.recommend-container>.articleBox::before{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -2;
+
+}
+.recommend-container>.articleBox>.content{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    padding: 16px 16px;
+    color: #ddd;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 2em;
+    background: rgba(0,0,0,0.3);
+}
+.recommend-container>.articleBox>.content>.title>a{
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 250px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.25s;
+}
+.recommend-container>.articleBox>.content>.title>a:hover{
+    color: #5cb85c;
+}
+.mainBottom{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    background: #eee;
+    box-sizing: border-box;
+    line-height: 100px;
+    letter-spacing: 1px;
+}

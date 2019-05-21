@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<% if(person[0]=='gs'){ %>
+
+    <ul class="nav nav-pills">
+        <li class="active   success"><a href="#">管理系统</a></li>
+        <li><a href="/admin-user">用户管理</a></li>
+        <li><a href="#">图片管理</a></li>
+        <li><a href="#">视频管理</a></li>
+        <li><a href="#">日记管理</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Java <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Swing</a></li>
+                <li><a href="#">jMeter</a></li>
+                <li><a href="#">EJB</a></li>
+                <li class="divider"></li>
+                <li><a href="#">分离的链接</a></li>
+            </ul>
+        </li>
+        <li><a href="#">PHP</a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>欢迎 <%= person[0]%></h1>
+            <p>这是您的管理系统</p>
+            <p><a class="btn btn-primary btn-lg" role="button">
+                    爱你哦</a>
+            </p>
+        </div>
+    </div>
+
+<% }else{ %>
+  只有管理员才能进入此页面
+<% } %>
+</body>
+</html>

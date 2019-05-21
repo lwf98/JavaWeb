@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>热门视频</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/share-video.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/share-video.js"></script>
+</head>
+<body>
+<nav class="navTop">
+           <div class="nav-in">
+                    <span class="brand">
+                    <a href="#"><img src="../images/logo.jpg" alt=""></a>
+           </span>
+                  <ul class="navTab">
+                      <li><a href="/index">首页</a></li>
+                      <li><a href="/shareArea">图片</a></li>
+                      <li><a href="/share/share-video">视频</a></li>
+                            <li><a href="/share/share-diary">阅读</a></li>
+                        </ul>
+                   <div class="navRight">
+                           <a href="/login" class="login">登陆/注册</a>
+                            <ul>
+                                    <li class="head"><img src=<%= user[0].uimg%> alt=""></li>
+                                    <li class="nickName"><%= user[0].Nickname%></li>
+                                   <li class="line">|</li>
+                                    <li><a href="/login">退出登陆</a></li>
+                                    <li><a href="/message">消息通知</a></li>
+                                 <li><a href="/filePublish">内容发布</a></li>
+                                  <li><a href="/test">个人空间</a></li>
+                            </ul>
+                   </div>
+               </div>
+      </nav>
+
+<div class="main">
+    <div class="mainTop">
+        <ul class="sortRule">
+            <li ><a style="text-decoration: none;display:block;width: 100%;height: 100%;" href="/share/share-video">浏览最多</a></li>
+            <li><a  style="text-decoration: none;display:block;width: 100%;height: 100%;" href="/sharevideoGoods">点赞最多</a></li>
+            <li ><a style="text-decoration: none;display:block;width: 100%;height: 100%;" href="/sharevideoDate">最新发布</a></li>
+        </ul>
+    </div>
+    <div class="mainBottom">
+        <ul class="videoList">
+
+
+            <% for(var i in video){ %>
+            <li class="videoBox">
+                <div class="videoBox-in">
+                    <div class="box">
+                        <a href="/share/video/?src=<%= video[i].src%>" target="_blank"><video src=<%= video[i].src%> width="370px" height="220px" muted></video></a>
+                        <span class="iconfont icon-shipinbofang  playIcon"></span>
+                        <p class="progressBar"><span class="progress"></span></p>
+                    </div>
+                    <div class="bottomInfo">
+                        <p class="videoTitle"><a href="/share/video/?src=<%= video[i].src%>" target="_blank"><%= video[i].title%></a></p>
+                        <p class="publisher"><a href="/userPage?<%= video[i].uname%>" target="_blank">By / <%= video[i].Nickname%></a></p>
+                        <p class="data">
+                            <span class="playNum"><%= video[i].liulan%></span> 次播放 | 评论:
+                            <span class="comNum"><%= video[i].views%></span> | 喜欢:
+                            <span class="likeNum"><%= video[i].goods%></span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+                <% } %>
+
+
+        </ul>
+    </div>
+</div>
+</body>
+</html>

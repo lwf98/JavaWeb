@@ -1,0 +1,402 @@
+body{
+    width: 100%;
+    background: #f8f8f8;
+    color: #333;
+    font-family: siyuan;
+}
+/*文章内容区开始*/
+.article{
+    width: 960px;
+    border: 1px solid #e8e8e8;
+    padding: 46px 160px 124px;
+    margin: 10px auto 125px auto;
+    background-color: #fff;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.articleTop{
+    border-bottom: 1px solid #ececec;
+}
+.articleTop>.title{
+    font-size: 30px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+.articleTop>.info{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.info>.writer{
+    height: 40px;
+    position: relative;
+}
+.info>.writer>.head{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+}
+.info>.writer>.name{
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 300px;
+    overflow: hidden;
+}
+.writer>.head>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.writer>.name>a{
+    font-size: 13px;
+    color: #333;
+    transition: 0.25s;
+    text-decoration: none;
+}
+.writer>.name>a:hover{
+    color: #57ad68;
+}
+.articleTop>.info span{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 1px;
+}
+.articleBottom{
+    padding-top: 40px;
+    width: 100%;
+}
+.articleBottom>img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+.articleBottom>.content{
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+.articleBottom .articleReport{
+    float: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+.articleBottom>p>.articleReport:hover{
+    color: #333;
+}
+.icon{
+    display: inline-block;
+    height: 23px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    background: url("../images/like1.png") no-repeat left top;
+    background-size: 25px 23px;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+}
+.likeNum:hover{
+    background-image: url("../images/like2.png") !important;
+}
+/*文章内容区结束*/
+/*底部信息区开始*/
+.infoBottom{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #e8e8e8;
+    position: fixed;
+    bottom: 0;
+    display: none;
+}
+.infoBottom>.infoBottom-in{
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 18px;
+    padding-left: 160px;
+    box-sizing: border-box;
+}
+.infoBottom>.infoBottom-in>.commentNum{
+    margin-left: 80px;
+    background-image: url("../images/commonIcon.png");
+}
+.infoBottom>.infoBottom-in>.commentNum:hover{
+    background-image: url("../images/commonIconH.png");
+}
+/*底部信息区结束*/
+/*评论发送开始*/
+.commentSend{
+    width: 100%;
+    height: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+.commentSend>div:nth-child(1){
+    width: 450px;
+    height: 99px;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 80px auto;
+    /*padding-left: 10px;*/
+}
+.commentSend textarea{
+    color: #666;
+    outline: none;
+    width: 470px;
+    height: 99px;
+    resize: none;
+    overflow: auto;
+    overflow-x: hidden;
+    /*border: 1px solid #e8e8e8;*/
+    border: none;
+    /*margin: 80px 0;*/
+    padding: 16px 25px 16px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.commentSend>div{
+    position: relative;
+}
+.commentSend .send{
+    width: 100px;
+    height: 36px;
+    margin-top: 100px;
+    border-radius: 18px;
+    border: none;
+    background: #78bc85;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.commentSend .send:hover{
+    background: #57ad68;
+}
+.commentSend .send::after{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    border-top: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    background: #fff;
+    position: absolute;
+    left: -42px;
+    top: 110px;
+    transform: rotate(45deg);
+}
+/*评论发送结束*/
+/*评论区开始*/
+.article>.commentsArea{
+    width: 100%;
+}
+.article>.commentsArea>.title{
+    width: 75px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    height: 33px;
+    line-height: 33px;
+}
+.article>.commentsArea>.title>span{
+    font-size: 13px;
+    margin-left: 3px;
+}
+.commentsArea>.comments{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+.comments .commentsList{
+    width: 100%;
+}
+.comments .commentsList>.comment{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.comments .commentsList>.comment>.commentLeft{
+    overflow: hidden;
+}
+.comments .commentsList>.comment>.commentLeft>.head{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+
+}
+.commentLeft>.head>a{
+    text-decoration: none;
+    display: inline-block;
+}
+.commentLeft>.head>a>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.comments .commentsList>.comment>.commentLeft>div{
+    float: left;
+}
+.comments .commentsList>.comment>.commentLeft .nickName{
+    font-size: 14px;
+    margin-right: 10px;
+    color: #333;
+    text-decoration: none;
+}
+.comments .commentsList>.comment>.commentLeft .date{
+    color: #999;
+}
+.comments .commentsList>.comment>.commentLeft .content{
+    color: #666;
+    font-size: 14px;
+    font-weight: 200;
+    width: 500px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.comment>.commentRight>.a2{
+    color: #666;
+    display: block;
+    text-decoration: none;
+    float: right;
+    margin-left: 10px;
+}
+.comment>.commentRight>.a1{
+    color: #666;
+    display: none;
+    text-decoration: none;
+    float: right;
+    margin-left: 10px;
+}
+.comment>.commentRight>a:hover{
+    color: #333;
+}
+/*.comments .commentsList>.comment:hover .commentRight>a{
+    display: block;
+}*/
+.comments .commentsList>.comment>.commentRight>a.comDelete{
+    /*display: none;*/
+}
+.commentsArea>.unfold{
+    margin-top: 30px;
+    text-align: center;
+    color: #57ad68;
+    cursor: pointer;
+    display: none;
+}
+/*评论区结束*/
+/*选择框开始*/
+.confirm{
+    position: fixed;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 220px;
+    box-sizing: border-box;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    padding-top: 20px;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.confirm>div:nth-child(1){
+    width: 100%;
+    height: 100px;
+}
+.confirm>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 15px auto;
+}
+.confirm>p{
+    height: 70px;
+    font-size: 16px;
+}
+.confirm>.btnGroup{
+    width: 330px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-sizing: border-box;
+}
+.confirm>.btnGroup>span{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.confirm>.btnGroup>span:nth-child(1){
+    color: #999;
+    border-bottom-left-radius: 6px;
+    border-left: none;
+}
+.confirm>.btnGroup>span:nth-child(2){
+    color: #57ad68;
+    border-bottom-right-radius: 6px;
+    border-right: none;
+}
+/*选择框结束*/
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/

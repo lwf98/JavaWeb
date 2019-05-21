@@ -1,0 +1,203 @@
+body{
+    padding-top: 70px;
+}
+/*主体部分样式开始*/
+.main{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+/*左方选项卡部分样式开始*/
+.main>.tabControl{
+    float: left;
+    width: 15%;
+    text-align: center;
+    margin-top: 60px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.main>.tabControl>li{
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.main>.tabControl>.selected a{
+    color: #57ad68;
+}
+
+.main>.tabControl>li>a{
+    width: 100%;
+    height: 100%;
+    color: #555;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main>.tabControl>li>a>i{
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.main>.tabControl>li>a:hover{
+    color: #57ad68;
+}
+.content{
+    width: 85%;
+}
+/*左方选项卡部分样式结束*/
+/*文章发布开始*/
+.content .articlePublish{
+    width: 900px;
+    margin: 0 auto;
+}
+form .articleTitle{
+    width: 900px;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+form .articleTitle>input{
+    width: 800px;
+    height: 45px;
+    font-size: 32px;
+    padding-left: 5px;
+    color: #333;
+    box-sizing: border-box;
+    border: none;
+}
+form .articleTitle>.wordNum{
+    width: 100px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    line-height: 45px;
+}
+form .articleContent{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #fcfcfc;
+
+}
+form .articleContent>textarea{
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    line-height: 1.7em;
+    font-size: 16px;
+    color: #333333;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+.importImg{
+    font-size: 12px;
+    color: #666;
+    margin: 10px;
+}
+.importImg>span{
+    position: relative;
+}
+.importImg>span>input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.importImg .iconfont{
+    color: #57ad68;
+    font-size: 12px;
+}
+.importImg .imgName{
+    margin-left: 10px;
+    color: #333;
+}
+.importImg .delete{
+    float: right;
+    cursor: pointer;
+    display: none;
+    transition: 0.25s;
+}
+.importImg .delete:hover{
+    color: #57ad68;
+}
+.controlBtn{
+    width: 900px;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.controlBtn>input{
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+}
+.controlBtn>input:hover{
+    background: #e8e8e8;
+}
+.controlBtn>input[type="submit"]{
+    width: 100px;
+    background: #78bc85;
+    border: 1px solid #57ad68;
+    color: #fff;
+}
+.controlBtn>input[type="submit"]:hover{
+    background: #57ad68;
+}
+/*文章发布结束*/
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/
+

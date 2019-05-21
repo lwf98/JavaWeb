@@ -1,0 +1,238 @@
+body{
+    font-family: siyuan, "微软雅黑";
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url('../fonts/SourceHanSansCN-Light.otf');
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url("../fonts/SourceHanSansCN-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: stfyt;
+    src: url("../fonts/stfyt.ttf");
+}
+
+/*根据窗口做自适应变化*/
+@media only screen
+and (max-width: 767px){
+    blockquote{
+        font-size: 30px;
+    }
+    .navbar-btn{
+        margin-left: 10px;
+    }
+    .picShare ul li{
+        width: 100%;
+    }
+    .vidShare ul li{
+        width: 100%;
+    }
+}
+
+@media only screen
+and (max-width: 991px)
+and (min-width: 768px){
+    blockquote{
+        font-size: 40px;
+    }
+    .picShare ul li{
+         width: 50%;
+     }
+    .vidShare ul li{
+        width: 100%;
+    }
+}
+
+@media only screen
+and (min-width: 992px){
+    blockquote{
+        font-size: 40px;
+    }
+    .picShare ul li{
+        width: 25%;
+    }
+    .vidShare ul li{
+        width: 50%;
+    }
+}
+/*自适应变化结束*/
+
+/*回到顶部开始*/
+.move-top{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 10;
+    display: none;
+}
+/*回到顶部结束*/
+
+/*导航条样式开始*/
+.navbar-default{
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: none;
+}
+
+.navbar-brand{
+    padding: 10px;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > .navbar-btn > a{
+    color: #fff ;
+}
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+    color: rgb(252, 124, 115);
+}
+
+.navbar-btn{
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: 1px solid #fff;
+    margin-right: 30px;
+}
+
+ .navbar-btn:hover{
+    background: #fff;
+}
+
+.navbar-default .navbar-nav > li > .navbar-btn:hover a{
+    color: #777 !important;
+}
+
+/*导航条样式结束*/
+
+
+/*随机引语样式开始*/
+.quote{
+    background: url("../images/bg03.jpg") no-repeat center center;
+    width: 100%;
+    height: 500px;
+}
+
+blockquote{
+    border: none;
+    /*font-size: 40px;*/
+    color: #fff;
+    margin: 15% auto;
+    /*font-family: siyuan, "微软雅黑";*/
+    font-weight: bold;
+}
+
+
+blockquote footer{
+    color: #fff;
+}
+
+/*随机引语样式结束*/
+
+/*首页标语开始*/
+.slogan{
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to right, #b34fa9, #7c43b8);
+    font-size: 80px;
+    line-height: 120px;
+    font-family: stfyt;
+    color: #fff;
+    border-top: 1px solid transparent;
+
+}
+
+/*首页标语结束*/
+
+/*分享区开始*/
+.order {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 30px;
+}
+.order .line {
+    display: inline-block;
+    width: 20%;
+    border-top: 3px solid #777;
+}
+.order .h1 {
+    color: #555;
+    vertical-align: middle;
+}
+
+
+/*分享区开始*/
+
+.toMorePic,.toMoreVid{
+    float: right;
+    background: url("../images/toMore.png") no-repeat 0 0;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    transition: all 300ms;
+}
+
+.toMorePic:hover{
+    transform: scale(1.3);
+}
+
+.toMoreVid:hover{
+    transform: scale(1.3);
+}
+
+.picShare, .picShare ul{
+    float: left;
+}
+
+.picShare ul li{
+    transition: all 300ms;
+    float: left;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.picShare ul li img{
+    width: 100%;
+    height: 100%;
+}
+
+.picShare ul li:hover{
+    position: relative;
+    top: -3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.vidShare{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+
+.vidShare ul li{
+    height: 300px;
+    float: left;
+    position: relative;
+    padding: 5px;
+}
+
+.vidShare ul li span{
+    background: url("../images/videoPlay.png");
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin-left: -20px;
+    transition: all 500ms;
+}
+
+.vidShare ul li:hover span{
+    transform: scale(1.3);
+}
+

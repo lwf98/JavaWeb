@@ -1,0 +1,718 @@
+body{
+    font-family: siyuan, "微软雅黑";
+    padding-top: 50px;
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url('../fonts/SourceHanSansCN-Light.otf');
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url("../fonts/SourceHanSansCN-Bold.otf");
+    font-weight: bold;
+}
+
+
+/*根据窗口做自适应变化*/
+@media only screen
+and (max-width: 767px){
+    .navbar-btn{
+        margin-left: 10px;
+    }
+    .picBox{
+        width: 50%;
+    }
+}
+
+@media only screen
+and (max-width: 991px)
+and (min-width: 768px){
+    .picBox{
+        width: 33.3%;
+    }
+}
+
+@media only screen
+and (min-width: 992px){
+    .picBox{
+        width: 25%;
+    }
+}
+/*自适应变化结束*/
+
+
+/*回到顶部开始*/
+.move-top{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    display: none;
+}
+/*回到顶部结束*/
+
+.order {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 30px;
+}
+.order .line {
+    display: inline-block;
+    width: 5%;
+    border-top: 3px solid #777;
+}
+
+.order .white-space{
+    display: inline-block;
+    width: 2%;
+}
+.order .h3 {
+    color: #777;
+    vertical-align: middle;
+}
+
+.headPortrait>a,.commentHeader>a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+.chooseNav{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.chooseNav li{
+    font-size: 16px;
+    line-height: 40px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.chooseNav li.selected{
+    font-weight: bold;
+    border-bottom: 1px solid #c90000;
+}
+
+/*图片区开始*/
+.container.content>div{
+    display: none;
+}
+.container.content>div.selected{
+    display: block;
+}
+
+.picShowArea{
+    background: #ccc;
+    position: relative;
+    display: none;
+}
+
+.picShowArea .picBox{
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 300ms;
+    border-radius: 5px;
+
+}
+
+.picShowArea .picBox:hover{
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.picShowArea .picBox:hover .pic>span{
+    display: inline-block;
+}
+
+.picShowArea .picBox>.pic{
+    position: relative;
+}
+
+.picShowArea .picBox>.pic>span{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #eaeaea;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    display: none;
+}
+
+.picShowArea .notLike>.pic>span{
+    color: #777;
+}
+
+.picShowArea .like>.pic>span{
+    color: #cb0000;
+}
+
+.picBox>.pic>span:hover{
+    background: #d9d9d9;
+}
+
+.picShowArea .picBox .pic>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/*视频区开始*/
+.vidShowArea{
+    width: 100%;
+    padding-top: 20px;
+}
+
+.vidShowArea .videoBox{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 33.33%;
+    padding: 15px;
+    text-align: center;
+    float: left;
+}
+
+.videoBox .videoBox-in{
+    border: 1px solid #e8e8e8;
+    position: relative;
+    transition: all 0.2s linear;
+    box-sizing: border-box;
+
+}
+
+.vidShowArea .videoBox-in:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.videoBox img{
+    width: 100%;
+}
+
+.videoBox .videoTitle{
+    color: #333;
+    font-size: 16px;
+    margin-top: 5px;
+    line-height: 20px;
+}
+
+.videoBox .videoDate{
+    color: #777;
+    font-size: 12px;
+}
+
+.videoBox .play{
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+    text-align: center;
+    padding: 0;
+    font-size: 12px;
+    color: #fff;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    position: absolute;
+    left: 20px;
+    top: 65%;
+    transition: all 0.2s linear;
+}
+
+.vidShowArea .videoBox:hover .play{
+    border: none;
+    background: #ff622e;
+}
+/*视频区结束*/
+
+/*日记区开始*/
+
+
+.diaryContent-in{
+    width: 800px;
+    height: 600px;
+    margin: 30px auto;
+    border-left: 3px solid #ccc;
+    /*background: #f1f1f1;*/
+
+
+}
+.diaryContent-in>.diaryBox{
+    position: relative;
+    margin-bottom: 70px;
+}
+.diaryContent-in>.diaryBox>.diaryBox-left{
+    width: 80px;
+    transform: translateX(-150%);
+}
+.diaryBox-left>.head{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    padding: 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow: 0 0 10px #aaa;
+
+}
+.diaryBox-left>.head>img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+.diaryBox-left>.date{
+    display: inline-block;
+    width: 80px;
+}
+.diaryBox-left>.date>p{
+    float: right;
+    color: #999;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.diaryContent-in>.diaryBox>.diaryBox-right{
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 5px;
+    background: #fff;
+    width: 760px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+
+}
+
+.diaryBox-right>.title{
+    font-size: 18px;
+    color: #00a0d5;
+    cursor: pointer;
+}
+
+.diaryBox-right>.title:hover>span{
+    display: inline-block;
+
+}
+
+.diaryBox-right>.title>span{
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    float: right;
+    display: none;
+}
+
+.diaryShowArea .like .title>span{
+    color: #cb0000;
+}
+
+.diaryShowArea .notLike .title>span{
+    color: #777;
+}
+
+.diaryBox-right>p{
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+
+}
+.diaryBox>.icon{
+    width: 88px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    left: -45px;
+    top: 30px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    z-index: 2;
+}
+.diaryBox>.icon>.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 3px solid #c7254e;
+    box-sizing: border-box;
+    background: #fff;
+}
+.diaryBox .cover{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: #fff;
+    display: none;
+}
+.diaryBox .cover .boxS{
+    width: 100%;
+    height: 13px;
+    background: url("../images/boxShadow.png") no-repeat center center transparent;
+    position: absolute;
+    top: -13px;
+}
+
+.diaryBox .cover>span{
+    float: right;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.diaryBox .cover>span:last-child{
+    display: none;
+}
+
+.diaryBox .cover>span:hover{
+    color: #00a0d5;
+}
+/*日记区结束*/
+
+
+/*大图蒙版与视频蒙版开始*/
+.imgDetails,.videoPlay{
+    width: 100%;
+    z-index: 9999;
+    background: rgba(229,229,229,.95);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: none;
+    overflow-y: scroll;
+}
+
+.imgDetails>img,.videoPlay>img{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.imgDetails-main,.videoPlay-in{
+    float: left;
+    width: 1015px;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+}
+
+.bigImg,.videoPlay-left{
+    float: left;
+    width: 700px;
+    margin-right: 15px;
+    padding: 20px 10px;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.videoPlay-left{
+    padding: 0;
+    background: transparent;
+}
+
+.imgDetails-main .bigImg img{
+    width: 100%;
+    height: auto;
+}
+
+.imgInfo,.videoPlay-right{
+    float: left;
+    width: 300px;
+    height: 650px;
+    background: #fff;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.author{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.author img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.imgInfo .comments{
+    margin-top: 20px;
+    width: 100%;
+}
+
+.comments .comments-top{
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.comments-top textarea{
+    width: 100%;
+    height: 60px;
+    padding: 3px;
+    resize: none;
+    border-radius: 3px;
+}
+
+.comments-top .releaseCom{
+    width: 60px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 3px;
+    float: right;
+    color: #fff;
+    background: #f7993a;
+    border: 1px solid #f77c3d;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.comments-top .releaseCom:hover{
+    background: #f77012;
+}
+
+.comments .comments-bottom{
+    width: 100%;
+    border-top: 1px dashed #ccc;
+    height: 500px;
+}
+
+.comments-bottom ul{
+    width: 100%;
+}
+
+.comments-bottom ul li{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 2px;
+}
+.commentHeader{
+
+    float: left;
+}
+.commentHeader img{
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    float: left;
+    margin-right: 10px;
+}
+
+.commentText{
+    float: left;
+    width: 185px;
+}
+.commentCon{
+    word-wrap: break-word;
+
+}
+
+/*大图蒙版结束*/
+
+/*视频播放蒙版开始*/
+/*.videoPlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: scroll;
+    display: none;
+}*/
+
+/*.videoPlay .videoPlay-in{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    background: transparent;
+
+}*/
+
+.videoPlay-in .videoPlay-header{
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-radius: 3px 3px 0 0;
+    background: #fff;
+}
+
+.videoPlay-header .videoPlay-title{
+    font-size: 20px;
+    line-height: 50px;
+    color: #333333;
+}
+
+.videoPlay-header>span:last-child{
+    font-size: 20px;
+    line-height: 50px;
+    float: right;
+    margin-right: 10px;
+}
+
+.like .videoPlay-header>span:last-child{
+    color: #cb0000;
+}
+
+.notLike .videoPlay-header>span:last-child{
+    color: #777;
+}
+
+/*.videoPlay-header .videoClose{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    float: right;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+.videoPlay-header .videoClose:hover{
+    color: #777;
+}
+*/
+
+.videoPlay-in .videoPlay-main{
+    width: 100%;
+    padding: 0;
+}
+
+.videoPlay-main video{
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 3px 3px;
+
+}
+/*视频播放蒙版结束*/
+
+/*日记展开蒙版开始*/
+.diaryUnfold{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgb(242, 242, 242);
+    z-index: 9999;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+.diaryUnfold .closeDiary{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.diaryUnfold .diaryUnfold-main{
+    width: 1000px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 2px #ddd;
+    margin: 75px auto 30px auto;
+    padding: 20px 50px;
+}
+
+.diaryUnfold-main h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.diaryUnfold-main ul{
+    width: 300px;
+    float: right;
+    list-style: none;
+    position: relative;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.diaryUnfold-main ul>li{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    margin-left: 10px;
+
+}
+.diaryUnfold-main ul>li>img{
+    width: 100%;
+    height: auto;
+}
+.diaryUnfold-main .diaryCurrentImg{
+    display: block;
+}
+.diaryUnfold-main p{
+    line-height: 30px;
+    font-size: 14px;
+}
+.diaryUnfold-main p::first-letter
+{
+    font-size: 4em;
+    font-weight: lighter;
+    margin-right: 8px;
+    float: left;
+}
+
+.diaryUnfold-bottom{
+    width: 1000px;
+    margin: 0 auto 75px auto;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 2px #ddd;
+    padding: 20px 50px;
+}
+
+.diaryUnfold-bottom>h5{
+    font-weight: bold;
+}
+
+.diaryUnfold-bottom .comments-bottom{
+    height: auto;
+}
+/*日记展开蒙版结束*/

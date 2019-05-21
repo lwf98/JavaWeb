@@ -1,0 +1,176 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人界面</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/userPage.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/userPage.js"></script>
+</head>
+<body>
+<div class="userPage">
+    <div class="userPage-top">
+        <div class="userPage-top-left">
+            <div class="head">
+                <img src="images/cat.jpg" alt="">
+            </div>
+            <div class="info">
+                <h4 class="nickName">
+                    海绵宝宝
+                </h4>
+                <p class="intro">
+                    鹅，鹅，鹅，曲项向天歌，白毛浮绿水，红掌拨清波。
+                </p>
+            </div>
+
+        </div>
+        <div class="userPage-top-right">
+            <!--<button class="sendMessage"><a href="message.ejs" target="_blank">私信</a></button>-->
+            <button href="userSet.html" class="userSet"><a href="userSet.ejs" target="_blank">个人设置 <span class="iconfont icon-sanjiao"></span></a></button>
+            </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="nav-home selected"><a href="userPage.html">主页</a></li>
+            <li class="nav-pic"><a href="userPage-img.ejs">图片</a></li>
+            <li class="nav-video"><a href="userPage-video.ejs">视频</a></li>
+            <li class="nav-diary"><a href="userPage-article.ejs">文章</a></li>
+        </ul>
+        <div>
+            <p>收到的赞</p>
+            <span>1000</span>
+        </div>
+    </div>
+    <div class="userPage-content">
+        <div class="imageArea">
+            <div class="title">图片 <span class="more"><a href="userPage-image.html">更多 <span class="iconfont icon-sanjiao"></span></a></span></div>
+            <div class="content">
+                <ul class="imageList">
+                    <!--最多放四个imageBox-->
+                    <!--若此图片以点赞,为imageBox添加liked类-->
+                    <li class="imageBox">
+                        <div class="imageBox-in">
+                            <div class="box">
+                                <a href="image.html" target="_blank"><img src="images/bg.jpg" alt=""></a>
+                            </div>
+                            <div class="bottomInfo">
+                                <div class="infoTop">
+                                    <span class="publisher">
+                                        <span class="head">
+                                            <img src="images/cat.jpg" alt="">
+                                        </span>
+                                        <span class="nickName">
+                                            <a href="user.html" target="_blank">蟹老板</a>
+                                        </span>
+                                    </span>
+                                    <!--当登陆者时本人时deleteIcon显示,likeIcon隐藏;若非本人则相反-->
+                                    <!--<span class="likeIcon"></span>-->
+                                    <span class="deleteIcon iconfont icon-shanchu "></span>
+                                </div>
+                                <div class="data">
+                                    <span class="lookNum">1122</span> 次浏览 | 评论:
+                                    <span class="comNum">99</span> | 喜欢:
+                                    <span class="likeNum">121</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </div>
+        </div>
+        <div class="videoArea">
+            <div class="title">视频 <span class="more"><a href="userPage-video.ejs">更多 <span class="iconfont icon-sanjiao"></span></a></span></div>
+            <div class="content">
+                <ul class="videoList">
+                    <!--最多放三个videoBox-->
+                    <li class="videoBox">
+                        <div class="videoBox-in">
+                            <div class="box">
+                                <a href="video.html" target="_blank"><video src="video/01.mp4" width="370px" height="220px" muted></video></a>
+                                <span class="iconfont icon-shipinbofang  playIcon"></span>
+                                <p class="progressBar"><span class="progress"></span></p>
+                            </div>
+                            <div class="bottomInfo">
+                                <p class="videoTitle"><a href="video.html" target="_blank">因为是脆弱的蓝色 因为是脆弱的蓝色 因为是脆弱的蓝色</a></p>
+                                <!--当登陆者时本人时deleteIcon显示-->
+                                <p class="publisher"><a href="#" target="_blank">By / 章鱼哥</a> <span class="deleteIcon iconfont icon-shanchu"></span></p>
+                                <p class="data">
+                                    <span class="playNum">3300</span> 次播放 | 评论:
+                                    <span class="comNum">1200</span> | 喜欢:
+                                    <span class="likeNum">1000</span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </div>
+        </div>
+        <div class="articleArea">
+            <div class="title">文章<span class="more"><a href="userPage-article.ejs">更多 <span class="iconfont icon-sanjiao"></span></a></span></div>
+            <div class="content">
+                <ul class="articleList">
+                    <!--最多放四个articleBox-->
+                    <li class="articleBox">
+                        <div class="articleLeft">
+                            <div class="articleTop">
+                                <p class="articleTitle">
+                                    <a href="readArticle.html" target="_blank">缘浅缘深，如溪如河</a>
+                                </p>
+                                <p class="writer">
+                                    <a href="user.html" target="_blank">By / 派大星</a>
+                                    <!--当登陆者时本人时deleteIcon显示-->
+                                    <span class="deleteIcon iconfont icon-shanchu"></span>
+                                </p>
+                            </div>
+                            <div class="articleContent">
+                                <p>独自面对这样一场日出，非我所愿。曾有几次，我们爬凌晨的山峦，为看远方海上绮丽的日出，并肩而行，彼此依靠，在等来的红晕中雀跃欢呼，此生难忘。决然不会想到村上春树《1Q84》中的一幕场景，青豆一面聆听音乐，一面想象拂过波西米亚平原的悠缓的风，“当时，谁也不知道将来会发生什么。”我们来到了此刻。你应该刚从床上爬起，匆匆洗漱一番，把猫食放入盘中，自己咬块面包，换上皮鞋就出门了。你开车，在我们熟悉的马路上行驶，经过多少红绿灯，穿过多少街道，看见多少装潢风格相近的店铺，车水马龙，人潮涌动，你都如数家珍。生活仿佛一成不变，只是不知是否有人注意到，你的副驾驶位置上已无人就坐。</span>
+                                </p>
+
+                            </div>
+                            <div class="articleBottom">
+                                <span class="watchNum">0</span>
+                                次阅读 | 评论:
+                                <span class="comNum">0</span>
+                                | 喜欢:
+                                <span class="likeNum">0</span>
+                            </div>
+                        </div>
+                        <div class="articleRight">
+                            <!--配图区,若有配图则添加一个img, 没有就不添加,最多一个配图-->
+                        </div>
+                    </li>
+                </ul>
+                <p class="noContent">
+                    这里还没有被上传的内容
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="confirm">
+    <div>
+        <img src="images/confirm-img.png" alt="">
+    </div>
+    <p></p>
+    <div class="btnGroup">
+        <span>取消</span>
+        <span>确认</span>
+    </div>
+</div>
+<div class="hint">
+    <div>
+        <img src="images/hint-ok.png" alt="">
+    </div>
+    <p></p>
+</div>
+</body>
+</html>

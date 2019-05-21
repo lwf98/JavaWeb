@@ -1,0 +1,211 @@
+body{
+    font-family: siyuan, "微软雅黑";
+    padding-top: 50px;
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url('../fonts/SourceHanSansCN-Light.otf');
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url("../fonts/SourceHanSansCN-Bold.otf");
+    font-weight: bold;
+}
+
+/*清除input[type='number']右侧的箭头*/
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/*编辑区样式开始*/
+
+.dataMain{
+    height: 1000px;
+    background: #f6f6f6;
+    padding-top: 15px;
+    margin-bottom: 0;
+}
+
+.dataMain .dataMain-in{
+    height: 985px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(26,26,26,0.1);
+    border-radius: 0 0 2px 2px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dataMain-in>.topBg{
+    width: 100%;
+    height: 250px;
+    background: url("../images/bg01.webp") no-repeat center center;
+    background-size: 100% auto;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+}
+
+.topBg>span{
+    width: 150px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+
+}
+
+.topBg>span>i{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url("../images/camera.png") no-repeat center center;
+    background-size: 100% auto;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+
+.topBg>span>a{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 14px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.topBg>span>a:hover{
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.inner-input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.dataMain-in .headPortrait{
+    width: 150px;
+    height: 150px;
+    float: left;
+    position: relative;
+    left: 20px;
+    top: -20px;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dataMain-in .headPortrait>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.headPortrait>.head-mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.headPortrait>.head-mask>i{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url("../images/camera2.png") no-repeat center center;
+    background-size: 100% auto;
+    margin-top: 40px;
+}
+
+
+.dataMain-in .info{
+    width: 67%;
+    height: 800px;
+    float: left;
+    margin-left: 50px;
+}
+
+.info .nickName{
+    height: 80px;
+    padding: 10px 0;
+    border: none;
+}
+
+.info .nickName>span{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.info input[type='date']{
+    padding-top: 0;
+}
+
+.info .modify{
+    font-size: 16px;
+    color: #1296db;
+    display: none;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.info .modify>i{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../images/modify.png") no-repeat 0 0;
+    background-size: 100% auto;
+    vertical-align: middle;
+}
+
+.info p{
+    height: 80px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 80px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.info p>span{
+    font-weight: lighter;
+}
+
+.nickName{
+    /*display: none;*/
+}
+
+.edit{
+    border-bottom: 1px solid #e8e8e8;
+    display: none;
+}
+
+.edit label{
+    font-size: 18px;
+    line-height: 80px;
+}
+/*编辑区样式结束*/

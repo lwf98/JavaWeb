@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>personalData</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <link rel="stylesheet" href="../css/personalData.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    <script src="../js/personalData.js"></script>
+    <script>
+        $(function () {
+
+            //修改签名的请求
+            $("#qianming").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+               $.ajax({
+                    type:"post",
+                    url:"/test/qianming",
+                    data:{
+                       qianming:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+            })
+
+              //修改邮箱的请求
+            $("#sex").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/sex",
+                    data:{
+                        sex:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+            })
+
+             //修改生日的请求
+            $("#emails").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/email",
+                    data:{
+                        email:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+                return false;
+            })
+
+            //修改用户名的请求
+            $("#name").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/name",
+                    data:{
+                        name:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+                return false;
+            })
+
+           //修改手机的请求
+            $("#phones").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/phone",
+                    data:{
+                        phone:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+                return false;
+            })
+
+            //修改微博的请求
+            $("#weibos").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/weibo",
+                    data:{
+                        weibo:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+                return false;
+            })
+
+            //修改生日的请求
+            $("#births").click(function () {
+                console.log(this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML);
+                $.ajax({
+                    type:"post",
+                    url:"/test/birth",
+                    data:{
+                        birth:this.parentElement.parentElement.previousElementSibling.firstElementChild.innerHTML
+                    },
+                    dataType:'json',
+                })
+                return false;
+            })
+
+            //修改头像
+            $(".uimg").change(function () {
+                console.log(this);
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <!--编辑区开始-->
+    <div class="dataMain">
+        <div class="container">
+            <div class="dataMain-in col-md-10 col-xs-12 col-md-offset-1">
+                <div class="topBg">
+                    <span>
+                        <i></i>
+                        <a href="#">编辑封面图片</a>
+                        <input type="file" class="inputBg inner-input">
+                    </span>
+                </div>
+                    <div class="headPortrait">
+                        <img src=<%=info[0].uimg%> alt="">
+                        <div class="head-mask">
+                            <i></i>
+                            <p>修改我的头像</p>
+
+                            <form id="form" method="post" action="/test/tuxiang">
+                                <input  type="file" class="inputHead inner-input uimg">
+                                <input id="submit" type="submit">
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div>
+                            <p class="nickName"><span><%= info[0].name%></span><a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="nickName">用户名：</label>
+                                    <input type="text" class="form-control" id="nickName" maxlength="8">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="name" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="intro">签名： <span><%= info[0].qianming%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="intro">签名：</label>
+                                    <input type="text" class="form-control" id="intro" maxlength="20">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="qianming" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="gender">性别： <span><%= info[0].sex%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="gender">性别：</label>
+                                    <select class="form-control" id="gender">
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="sex" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="birthday">生日： <span><%= info[0].birth%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="birthday">生日：</label>
+                                    <input type="date" class="form-control" id="birthday">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="births" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <p class="email">邮箱： <span><%= info[0].email%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="email">邮箱：</label>
+                                    <input type="email" class="form-control" id="email" maxlength="22">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="emails" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="phone">手机： <span><%= info[0].phone%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="phone">手机：</label>
+                                    <input type="number" class="form-control" id="phone" maxlength="11">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="phones" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p class="weibo">微博： <span><%= info[0].weibo%></span>   <a href="javascript:;" class="modify"><i></i>修改</a></p>
+                            <div class="edit">
+                                <form class="form-inline">
+                                    <label for="weibo">微博：</label>
+                                    <input type="text" class="form-control" id="weibo" maxlength="20">
+                                    <input type="reset" value="取消" class="btn btn-default">
+                                    <input id="weibos" type="button" value="保存" class="btn btn-primary submit">
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

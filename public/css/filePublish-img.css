@@ -1,0 +1,255 @@
+body{
+    padding-top: 70px;
+}
+/*主体部分样式开始*/
+.main{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+/*左方选项卡部分样式开始*/
+.main>.tabControl{
+    float: left;
+    width: 15%;
+    text-align: center;
+    margin-top: 60px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.main>.tabControl>li{
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.main>.tabControl>.selected a{
+    color: #57ad68;
+}
+
+.main>.tabControl>li>a{
+    width: 100%;
+    height: 100%;
+    color: #555;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.main>.tabControl>li>a>i{
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.main>.tabControl>li>a:hover{
+    color: #57ad68;
+}
+.content{
+    width: 85%;
+}
+/*左方选项卡部分样式结束*/
+/*图片发布开始*/
+.imagePublish{
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.imagePublish .publishBox{
+    width: 100%;
+    /*position: relative;*/
+    border-collapse: separate;
+    overflow: hidden;
+}
+.imagePublish .publishBox>.publishInfo{
+    float: left;
+    width: 800px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    box-sizing: border-box;
+}
+.imagePublish .publishBox>.publishInfo>input{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    background: none;
+    outline: none;
+}
+.imagePublish .publishBox>.fileSelected{
+    float: left;
+    height: 34px;
+    width: 100px;
+    z-index: 2;
+    position: relative;
+    left: -3px;
+}
+.imagePublish .publishBox>.fileSelected>button{
+    background: #337ab7;
+    border: 1px solid #2e6da4;
+    box-shadow: none;
+    color: #fff;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.imagePublish .publishBox>.fileSelected>input[type="file"]{
+    z-index: 99;
+    opacity: 0;
+    width: 100px;
+    height: 34px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.fileShow{
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+.fileShow .fileBox{
+    width: 250px;
+    margin: 8px;
+    padding: 6px;
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+}
+
+.fileShow .fileBox>.fileBox-in{
+    width: 100%;
+    height: 280px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.fileShow .fileBox>.fileBox-in:hover{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+}
+.fileShow .fileBox>.fileBox-in>.box{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.fileShow .fileBox>.fileBox-in>.box>img{
+    width: 100%;
+}
+.fileBox-in p{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    height: 15px;
+    margin: auto;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+}
+.fileShow .removeAll{
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    top: 10px;
+    right: 10px;
+    color: #666;
+    cursor: pointer;
+}
+.imagePublish .controlBtn{
+    width: 100%;
+    margin-top: 50px;
+    text-align: right;
+    margin-bottom: 50px;
+    display: none;
+}
+.imagePublish .controlBtn>input{
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    cursor: pointer;
+}
+.imagePublish .controlBtn>input:hover{
+    background: #e8e8e8;
+}
+.imagePublish .controlBtn>input[type="submit"]{
+    width: 100px;
+    background: #78bc85;
+    border: 1px solid #57ad68;
+    color: #fff;
+}
+.imagePublish .controlBtn>input[type="submit"]:hover{
+    background: #57ad68;
+}
+/*图片发布结束*/
+
+/*提示信息开始*/
+.hint{
+    width: 250px;
+    height: 120px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.31);
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 6px;
+    opacity: 0;
+    display: none;
+}
+.hint>div{
+    width: 100%;
+    height: 80px;
+}
+.hint>div>img{
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+.hint>p{
+    height: 40px;
+    width: 100%;
+    color: #666;
+}
+/*提示信息结束*/
+

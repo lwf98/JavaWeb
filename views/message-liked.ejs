@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息中心-收到的赞</title>
+    <link rel="stylesheet" href="../css/base.css">
+
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/message.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/message.js"></script>
+</head>
+<body>
+<div class="message">
+    <div class="messageNav">
+        <div class="navTop">
+            <span class="iconfont icon-tubiaozhizuomoban "></span>
+            消息中心
+        </div>
+        <ul class="navBottom">
+            <li class="inform "><a href="/message">系统通知</a></li>
+            <li class="like selected"><a href="/message/message-liked">收到的赞</a></li>
+          
+        </ul>
+    </div>
+    <div class="messageMain">
+        <div class="messageTop">收到的赞</div>
+        <div class="messageBottom">
+            <div class="likeBoxOut">
+                <ul class="likeBox scrollY">
+                    <!--点赞信息-->
+                    <% for(var i in message){ %>
+                    <li>
+                        <span class="likeIcon iconfont icon-aixin "></span>
+                        <span class="userNickName">
+                            <span>用户</span>
+                            <a href="/userPage?<%=message[i].zname %>"><%=message[i].zname %></a>
+                             <span>给您点赞了</span>
+                        </span>
+                        <!--被点赞的内容链接-->
+                        <a href="<%= '/share/image?src='+ message[i].src%>">详情</a>
+                        <span class="time">
+                         <%=message[i].date %>
+                        </span>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

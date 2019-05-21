@@ -1,0 +1,211 @@
+body{
+    font-family: siyuan, "微软雅黑";
+    padding-top: 50px;
+}
+html{
+    width: 100%;
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url('../fonts/SourceHanSansCN-Light.otf');
+}
+
+@font-face {
+    font-family: siyuan;
+    src: url("../fonts/SourceHanSansCN-Bold.otf");
+    font-weight: bold;
+}
+
+/*主体部分样式开始*/
+.uploadMain{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+/*左方选项卡部分样式开始*/
+.uploadMain>.tabControl{
+    float: left;
+    width: 15%;
+    text-align: center;
+    margin-top: 60px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+}
+
+.uploadMain>.tabControl>li{
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.uploadMain>.tabControl>.selected a{
+    color: #02a1d6;
+}
+
+.uploadMain>.tabControl>li>a{
+    width: 100%;
+    height: 100%;
+    color: #555;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.uploadMain>.tabControl>li>a>i{
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+.uploadMain>.tabControl>li>a:hover{
+    color: #02a1d6;
+}
+
+/*左方选项卡部分样式结束*/
+
+/*右方上传文件部分样式开始*/
+.uploadMain>.uploadContent{
+    margin-top: 50px;
+    width: 85%;
+    float: left;
+    height: 100%;
+
+}
+
+.uploadContent>.uploadContent-in{
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+
+}
+
+.uploadContent-in>li{
+    display: none;
+}
+
+.uploadContent-in>.selected{
+    display: block;
+}
+
+/*上传文件部分样式调整*/
+.krajee-default .file-thumb-progress .progress, .krajee-default .file-thumb-progress .progress-bar{
+    line-height: 11px;
+}
+/*图片区开始*/
+.uploadImg .fileinput-upload.fileinput-upload-button{
+    display: none;
+}
+
+.uploadImg .kv-file-upload{
+    display: none;
+}
+
+.uploadImg .imgSetting{
+    display: none;
+}
+
+.uploadImg .warning3{
+    margin-top: 20px;
+    display: none;
+}
+/*图片区结束*/
+
+/*视频区开始*/
+.uploadContent-in>.uploadVideo{
+    position: relative;
+
+}
+
+.uploadContent-in>.uploadVideo div{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.uploadContent-in>.uploadVideo .chooseVideo{
+    width: 120px;
+    height: 40px;
+    background: #62c3ff;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.uploadContent-in>.uploadVideo .cover{
+    display: none;
+}
+
+.inner-input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.inputVideo{
+    width: 120px;
+    height: 40px;
+}
+
+.uploadVideo .uploadPoster{
+    position: relative;
+    display: inline-block;
+    width: 82px;
+    height: 35px;
+}
+
+.uploadPoster > .inputPoster{
+    width: 82px;
+    height: 35px;
+}
+
+.uploadVideo #preview{
+    vertical-align: bottom;
+}
+
+.uploadVideo .getPoster{
+    background: #62c3ff;
+    border: none;
+}
+
+.cover .poster {
+    margin-bottom: 20px;
+}
+
+.warning1, .warning2{
+    display: none;
+}
+
+form label{
+    font-size: 16px;
+    color: #333;
+    font-weight: lighter;
+}
+/*视频区结束*/
+
+/*日记区开始*/
+.writeDiary #diaryContent{
+    resize: none;
+    overflow: hidden;
+}
+
+.writeDiary pre{
+    display: none;
+}
+
+.writeDiary .kv-file-upload{
+    display: none;
+}
+
+.writeDiary .warning4{
+    display: none;
+}
+/*日记区结束*/
+
+
+/*右方上传文件部分样式结束*/
+
+/*主体部分样式结束*/

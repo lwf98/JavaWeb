@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息中心-我的私信</title>
+    <link rel="stylesheet" href="css/base.css">
+
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/message.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/message.js"></script>
+</head>
+<body>
+<div class="message">
+    <div class="messageNav">
+        <div class="navTop">
+            <span class="iconfont icon-tubiaozhizuomoban "></span>
+            消息中心
+        </div>
+         <ul class="navBottom">
+            <li class="inform "><a href="/message">系统通知</a></li>
+            <li class="like "><a href="/message/message-liked">收到的赞</a></li>
+            <li class="privateMessage selected"><a href="/message/message-private">我的私信</a></li>
+        </ul>
+    </div>
+    <div class="messageMain">
+        <div class="messageTop">我的私信</div>
+        <div class="messageBottom">
+            <div class="messageBox">
+                <div class="messageBoxTop">
+                    <span class="messageBoxTopLeft">
+                        近期消息
+                    </span>
+                    <span class="messageBoxTopRight"></span>
+                </div>
+                <div class="messageBoxBottom">
+                    <div>
+                        <ul class="contacts scrollY">
+                            <!--联系人列表 curChat为当前的联系人-->
+                            <li class="curChat">
+                                <div class="contactsLiIn">
+                                <span class="head">
+                                    <a href="userPage.html"><img src="images/cat2.jpg"></a>
+                                </span>
+                                    <div>
+                                        <p class="nickName">
+                                            <a href="userPage.html">章鱼哥</a>
+                                        </p>
+                                        <!--latest存放最近一条消息-->
+                                        <p class="latest">
+                                            who are you?who are you?who are you?who are you?
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--notice表示有未读消息-->
+                                <span class="notice"></span>
+                                <span class="delete">&times;</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="chatContent">
+                        <div class="chatContentTop">
+                            <div class="scrollY">
+                                <div class="chatTop">
+                                    没有更多了~
+                                </div>
+                                <ul class="chatRecords">
+                                    <!--当前右侧的聊天记录others为对方记录,oneself为我方记录-->
+                                    <li class="others">
+                                        <p class="chatTime">
+                                            2019年12月1日 19:06
+                                        </p>
+                                        <span class="head">
+                                            <img src="" alt="">
+                                        </span>
+                                        <div class="chatContent">
+                                            <span class="glyphicon glyphicon-triangle-left"></span>
+                                            <p>test test test test test test test test test test test test test test test test test test test test test test test test test test </p>
+                                        </div>
+                                    </li>
+                                    <li class="oneself">
+                                        <p class="chatTime">
+                                            2019年12月1日 19:06
+                                        </p>
+                                        <span class="head">
+                                            <img src="images/cat.jpg" alt="">
+                                        </span>
+                                        <div class="chatContent">
+                                            <span class="glyphicon glyphicon-triangle-left"></span>
+                                            <p>test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 test2 </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="chatContentBottom">
+                            <textarea name="chatFrame" id="chatFrame" cols="20" rows="5" placeholder="说点什么吧~" maxlength="100"></textarea>
+
+                            <div class="frameBottom">
+                                <button class="sendMessage btn btn-default" disabled="disabled">发送</button>
+                                <span class="words"><span>0</span>/100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

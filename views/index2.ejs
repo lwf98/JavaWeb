@@ -1,0 +1,575 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/index2.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <!--<script src="js/nav.js"></script>-->
+    <script src="js/index2.js"></script>
+</head>
+<body>
+<nav class="navTop">
+           <div class="nav-in">
+                    <span class="brand">
+                    <a href="#"><img src="../images/logo.jpg" alt=""></a>
+           </span>
+                  <ul class="navTab">
+                      <li><a href="/index">首页</a></li>
+                      <li><a href="/shareArea">图片</a></li>
+                      <li><a href="/share/share-video">视频</a></li>
+                            <li><a href="/share/share-diary">阅读</a></li>
+                        </ul>
+                   <div class="navRight">
+                           <a href="/login" class="login">登陆/注册</a>
+                            <ul>
+                                    <li class="head"><img src=<%= user[0].uimg%> alt=""></li>
+                                    <li class="nickName"><%= user[0].Nickname%></li>
+                                   <li class="line">|</li>
+                                    <li><a href="/login">退出登陆</a></li>
+                                    <li><a href="/message">消息通知</a></li>
+                                 <li><a href="/filePublish">内容发布</a></li>
+                                  <li><a href="/test">个人空间</a></li>
+                            </ul>
+                   </div>
+               </div>
+      </nav>
+<div class="main">
+    <div class="mainTop" style="background-image: url('images/topBg2.jpg')">
+        <p class="slogan">
+            在时光里享受温暖, 在流年里忘记花开
+        </p>
+    </div>
+    <div class="mainContent">
+        <div class="title">
+            <span>为您推荐</span>
+        </div>
+        <div class="recommend-container">
+            <!--图片1-->
+            <div class="imageBox">
+                <a href="/share/image?src=<%= image[0].src%>" target="_blank"><img src=<%=image[0].src %> alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum"><%=image[0].liulan %></span> 浏览
+                        <span class="watchNum"><%=image[0].goods %></span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        图片
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum"><%=image[0].liulan %></span> 浏览
+                        <span class="watchNum"><%=image[0].goods %></span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="/userPage?<%= image[0].name%> " target="_blank"><%= image[0].Nickname%></a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        图片
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="#">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum"><%= image[1].liulan%></span> 浏览
+                        <span class="watchNum"><%= image[1].goods%></span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="/userPage?<%= image[1].name%> " target="_blank"><%= image[1].Nickname%></a>
+                    </p>
+                </div>
+            </div>
+            <div class="imageBox">
+                <a href="/share/image?src=<%= image[1].src%>" target="_blank"><img src=<%=image[1].src %> alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum"><%=image[1].liulan %></span> 浏览
+                        <span class="watchNum"><%=image[1].goods %></span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="imageBox innerInfo">
+                <a href="#" target="_blank"><img src="images/bg.jpg" alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <!--图片2-->
+            <div class="imageBox innerInfo">
+                <a href="#" target="_blank"><img src="images/bg.jpg" alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="imageBox">
+                <a href="/share/image/?src=<%= image[3].src%>" target="_blank"><img src=<%=image[3].src %> alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum"><%=image[3].liulan %></span> 浏览
+                        <span class="watchNum"><%=image[3].goods %></span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        图片
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum"><%= image[3].liulan%></span> 浏览
+                        <span class="watchNum"><%= image[3].goods%></span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="/userPage/?<%= image[3].name%>" target="_blank"><%= image[3].Nickname%></a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        图片
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum"><%= image[4].liulan%></span> 浏览
+                        <span class="watchNum"><%= image[4].goods%></span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="/userPage/?<%= image[3].name%>" target="_blank"><%= image[4].Nickname%></a>
+                    </p>
+                </div>
+            </div>
+            <div class="imageBox">
+                <a href="/share/image/?src=<%= image[4].src%>" target="_blank"><img src=<%= image[4].src%> alt=""></a>
+                <div class="info">
+                    <div class="type">
+                        <span>图片</span>
+                    </div>
+                    <h2><a href="" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <!--视频1-->
+            <div class="videoBox">
+                <video src=<%= video[0].src%>  width="296px" preload="none"></video>
+                <a href="/share/video?src=<%= video[0].src%>" target="_blank"><img src="images/video1.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum"><%= video[0].liulan%></span> 浏览
+                        <span class="watchNum"><%= video[0].goods%></span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        视频
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">视频标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum"><%= video[0].liulan%></span> 浏览
+                        <span class="watchNum"><%= video[0].goods%></span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="/userPage?<%= video[0].uname%>" target="_blank"><%= video[0].Nickname%></a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        视频
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">7</span> 浏览
+                        <span class="watchNum">20</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">sunny</a>
+                    </p>
+                </div>
+            </div>
+            <div class="videoBox">
+                <video src="" width="296px" preload="none"></video>
+                <a href="#" target="_blank"><img src="images/indexBg03.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">4</span> 浏览
+                        <span class="watchNum">14</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="videoBox innerInfo">
+                <video src="video/01.mp4" width="296px" preload="none"></video>
+                <a href="#" target="_blank"><img src="../images/tu3.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">12</span> 浏览
+                        <span class="watchNum">33</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <!--视频2-->
+            <div class="videoBox innerInfo">
+                <video src="video/01.mp4" width="296px" preload="none"></video>
+                <a href="" target="_blank"><img src="../images/tu1.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">13</span> 浏览
+                        <span class="watchNum">22</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="videoBox">
+                <video src="video/01.mp4" width="296px" preload="none"></video>
+                <a href="#" target="_blank"><img src="../images/tu4.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">22</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        视频
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">26</span> 浏览
+                        <span class="watchNum">22</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">北海</a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        视频
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">27</span> 浏览
+                        <span class="watchNum">19</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">海绵宝宝</a>
+                    </p>
+                </div>
+            </div>
+            <div class="videoBox">
+                <video src="" width="296px" preload="none"></video>
+                <a href="#" target="_blank"><img src="../images/tu5.jpg" alt=""></a>
+                <span class="videoIcon iconfont icon-shipinbofang"></span>
+                <span class="playIcon iconfont icon-bofang"></span>
+                <div class="info">
+                    <div class="type">
+                        <span>视频</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">26</span> 浏览
+                        <span class="watchNum">27</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <!--文章1-->
+            <div class="articleBox" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href="#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        文章
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">派大星</a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        文章
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">海绵宝宝</a>
+                    </p>
+                </div>
+            </div>
+            <div class="articleBox" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href="#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="articleBox innerInfo" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href="#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <!--文章2-->
+            <div class="articleBox innerInfo" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href="#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="articleBox" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href="#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a href="#" target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="top">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        文章
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="#" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">派大星</a>
+                    </p>
+                </div>
+                <div class="bottom">
+                    <span class="iconfont icon-sanjiao"></span>
+                    <p class="type">
+                        文章
+                    </p>
+                    <span class="line"></span>
+                    <p class="title">
+                        <a href="" target="_blank">标题标题</a>
+                    </p>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                    <p class="publisher">
+                        来自 <a href="#" target="_blank">海绵宝宝</a>
+                    </p>
+                </div>
+            </div>
+            <div class="articleBox" style="background-image: url('images/bg.jpg');">
+                <div class="content">
+                    <div class="title"><a href=#" target="_blank">《寂静苍穹下》：写一本旅行情书，给自己一次救赎 </a></div>
+                    <p>旅行，对你来说意味着什么？也许是从朝九晚五的日子中逃离，或者是探索这个世界的一种乐趣。对于《寂静苍穹下》的作者李初初来说，旅行是一次疗伤和救赎——走在路上，放空自己，和过去的自己对话，站在上帝的视角去审视过去。
+                        这本书的时间跨度从2000年到2007年，从西北的白马雪山写到浩瀚沙海的巴丹吉林……读完这本书，我跟着李初初的笔尖，穿梭在轰鸣的前往新疆的火车上，窥视见稻城亚丁的雪山胴体，攀爬到西藏拉萨的寺庙之巅。
+                        《寂静苍穹下》不是一本传统意义上的旅行书，而是一本旅行散文。如果你想在这本书里面找到实用的旅行攻略，那么可能会让你失望。但在工作的夜晚捧起这本书，能够让你全身心的放松，投入到另外一个人的情感世界和旅行故事中。
+                        作者李初初在前言里写道：“我跟这个世界，有过情人般的争吵”，但在我看来他的旅程中没有丝毫的争吵，更多的是自己的救赎以及和这个世界和解。
+                        旅行的散文，带你穿梭在雪山之巅</p>
+                </div>
+                <div class="info">
+                    <div class="type">
+                        <span>文章</span>
+                    </div>
+                    <h2><a  target="_blank">美食摄影 复古</a></h2>
+                    <p class="data">
+                        <span class="likeNum">3569</span> 浏览
+                        <span class="watchNum">54</span> 喜欢
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainBottom">
+        <p>All rights reserved © 2019 Anke</p>
+    </div>
+</div>
+
+</body>
+</html>

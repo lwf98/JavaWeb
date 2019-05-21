@@ -1,0 +1,511 @@
+body{
+    background: #f4f5f7;
+}
+.userPage{
+    width: 1280px;
+    margin: 10px auto 50px auto;
+    background: #f4f5f7;
+}
+.userPage>.userPage-top{
+    width: 100%;
+    height: 250px;
+    background: url("../images/bg03.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 0 1px #eee;
+
+}
+.userPage-top-left{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.userPage-top-left>.head{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgba(255,255,255,0.5);
+    float: left;
+}
+.userPage-top-left>.head>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.userPage-top-left>.info{
+    width: 500px;
+    height: 100px;
+    float: left;
+    margin-left: 20px;
+    color: #fff;
+
+}
+.userPage-top-left>.info>.nickName{
+    line-height: 30px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.userPage-top-left>.info>.intro{
+}
+.userPage-top-right{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.userPage-top-right>.sendMessage{
+    width: 76px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: rgba(0,0,0,0.45);
+    font-size: 14px;
+    box-shadow: 0 0 0 2px hsla(0,0%,100%,.3);
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.userPage-top-right>.sendMessage:hover{
+    background: rgba(0,0,0,0.55);
+}
+.userPage>.userPage-bottom{
+    box-shadow: 0 0 0 1px #eee;
+    width: 100%;
+    border-radius: 5px;
+    background: #fff;
+}
+.userPage-bottom>div{
+    overflow: hidden;
+    display: none;
+    padding: 10px;
+}
+.userPage-bottom>div.diaryArea .diaryBox{
+    margin-left: 10px;
+}
+.userPage-bottom>div>.title{
+    margin-left: 10px;
+    color: #333;
+    font-size: 22px;
+}
+.userPage-bottom>div>.end{
+    height: 30px;
+    line-height: 40px;
+    color: #aaa;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    float: left;
+    border-top: 1px solid #ccc;
+}
+.userPage-bottom>div.selected{
+    display: block;
+}
+.userPage-bottom>.homeArea>div{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.userPage-bottom>.homeArea>div>.title{
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.userPage-bottom>.homeArea>div>.title>.count{
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #777;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    vertical-align: middle;
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+
+}
+
+.userPage-bottom>.homeArea>div>.title>.more{
+    font-size: 12px;
+    width: 60px;
+    height: 25px;
+    text-align: center;
+    display: inline-block;
+    line-height: 25px;
+    border: 1px solid #6d757a;
+    color: #6d757a;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
+.userPage-bottom>.homeArea>div>.title>.more:hover{
+    color: #02a0d5;
+    border: 1px solid #02a0d5;
+}
+.userPage-bottom>.homeArea>.pic>.main{
+    width: 100%;
+    overflow: hidden;
+}
+.picBox{
+    padding: 10px;
+    width: 25%;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+}
+.picBox>img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.video>.main{
+    width: 100%;
+    overflow: hidden;
+}
+.videoBox{
+    width: 25%;
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+}
+.videoBox>img{
+    width: 100%;
+    height: 140px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.videoBox>.videoTitle{
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    margin-bottom: 0;
+    color: #333;
+}
+.date{
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    font-size: 14px;
+    color: #777;
+}
+.videoBox>.play{
+    width: 44px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    position: absolute;
+    right: 15px;
+    bottom: 55px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+.diary>.main{
+    width: 100%;
+    overflow: hidden;
+}
+.diaryBox{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+.diaryBox>.diaryBox-left{
+    width: 1000px;
+    height: 100%;
+    float: left;
+}
+.diaryBox>.diaryBox-left>.diaryTitle{
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.diaryBox>.diaryBox-left>.diaryTitle:hover{
+    color: #02a0d5;
+}
+.diaryBox>.diaryBox-left>.content{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.diaryBox>.diaryBox-right{
+    width: 100px;
+    height: 100%;
+    float: right;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.diaryBox>.diaryBox-right>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.userPage>.nav{
+    width: 1280px;
+    height: 50px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    border-radius: 0 0 5px 5px;
+}
+.userPage>.nav>ul{
+    list-style: none;
+    overflow: hidden;
+    width: 600px;
+    float: left;
+}
+.userPage>.nav>ul>li{
+    float: left;
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+}
+.userPage>.nav>ul>li>a{
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    color: #333;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.userPage>.nav>ul>li>a:hover{
+    border-bottom: 3px solid #02a0d5;
+}
+.userPage>.nav>ul>li.selected a{
+    border-bottom: 3px solid #02a0d5;
+    color: #02a0d5;
+}
+.userPage>.nav>ul>li>a>img{
+    width: 25px;
+    height: 25px;
+}
+.userPage>.nav>div{
+    width: 100px;
+    height: 50px;
+    float: right;
+}
+.userPage>.nav>div>p{
+    width: 100%;
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+.userPage>.nav>div>p>span{
+    color: #cb0000;
+    font-size: 14px;
+}
+.userPage>.nav>div>span{
+    width: 100%;
+    display: inline-block;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+}
+/*大图查看蒙版开始*/
+.bigImgCover{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(229,229,229,.95);
+    z-index: 9999;
+    overflow-y: scroll;
+    display: none;
+}
+
+.bigImgCover .closeImg{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.bigImgCover .bigImgCover-in{
+    width: 1000px;
+    background: #fff;
+    margin: 60px auto 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.bigImgCover .bigImgCover-in img{
+    width: 100%;
+    height: auto;
+}
+/*大图查看蒙版结束*/
+
+/*视频播放蒙版开始*/
+.videoPlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: scroll;
+    display: none;
+}
+
+.videoPlay .videoPlay-in{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    background: transparent;
+
+}
+
+.videoPlay-in .videoPlay-header{
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    background: #e8e8e8;
+    border-radius: 3px 3px 0 0;
+}
+
+.videoPlay-header .videoPlay-title{
+    font-size: 20px;
+    line-height: 50px;
+    color: #333333;
+}
+
+.videoPlay-header .videoPlay-date{
+    font-size: 14px;
+    color: #777;
+    margin-left: 20px;
+}
+
+.videoPlay-header .videoClose{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    float: right;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 10px;
+    color: #333;
+    font-size: 18px;
+}
+
+.videoPlay-header .videoClose:hover{
+    color: #777;
+}
+
+
+.videoPlay-in .videoPlay-main{
+    width: 100%;
+    padding: 0;
+}
+
+.videoPlay-main video{
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 3px 3px;
+
+}
+/*视频播放蒙版结束*/
+
+/*日记展开蒙版开始*/
+.diaryUnfold{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgb(242, 242, 242);
+    z-index: 9999;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+.diaryUnfold .closeDiary{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.diaryUnfold .diaryUnfold-main{
+    width: 1000px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 2px #ddd;
+    margin: 75px auto;
+    padding: 20px 50px;
+
+}
+
+.diaryUnfold-main h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.diaryUnfold-main ul{
+    width: 300px;
+    float: right;
+    list-style: none;
+    position: relative;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.diaryUnfold-main ul>li{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    margin-left: 10px;
+
+}
+.diaryUnfold-main ul>li>img{
+    width: 100%;
+    height: auto;
+}
+.diaryUnfold-main .currentImg{
+    display: block;
+}
+.diaryUnfold-main p{
+    line-height: 30px;
+    font-size: 14px;
+}
+.diaryUnfold-main p::first-letter
+{
+    font-size: 4em;
+    font-weight: lighter;
+    margin-right: 8px;
+    float: left;
+}
+/*日记展开蒙版结束*/
