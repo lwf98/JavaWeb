@@ -7,7 +7,6 @@
 </head>
 <body>
 <% if(person[0]=='gs'){ %>
-
     <ul class="nav nav-pills">
         <li class="active   success"><a href="#">管理系统</a></li>
         <li><a href="/admin-user">用户管理</a></li>
@@ -28,8 +27,6 @@
         </li>
         <li><a href="#">PHP</a></li>
     </ul>
-
-
     <div class="container">
         <div class="jumbotron">
             <h1>欢迎 <%= person[0]%></h1>
@@ -39,7 +36,6 @@
             </p>
         </div>
     </div>
-
 <% }else{ %>
   只有管理员才能进入此页面
 <% } %>
