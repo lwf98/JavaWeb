@@ -8,7 +8,7 @@
 
 &emsp;&emsp;图片和视频的上传, 文章的发布, 图片、视频、文章的浏览， 点赞与评论功能
 
-#### 项目github地址：https://github.com/lwf98/JavaWeb--
+#### 项目github地址：https://github.com/lwf98/JavaWeb
 
 #### 网站开发人员：
 
