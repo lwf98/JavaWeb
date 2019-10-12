@@ -7,3 +7,12 @@
 #### 项目功能:
 
 &emsp;&emsp;图片和视频的上传, 文章的发布, 图片、视频、文章的浏览， 点赞与评论功能
+
+#### 使用的技术:
+
+前端：HTML5、CSS3、javascript、jquery、bootstrap
+
+后端：nodejs、express、MongoDB
+
+#### 
+
